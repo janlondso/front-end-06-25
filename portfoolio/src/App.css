@@ -18,11 +18,13 @@
   background-color: brown;
   margin: 50px auto;
 }
+
 .navigation-pictures {
   display: flex;
   justify-content: space-evenly;
   margin-top: 50px;
 }
+
 .navigation-pictures img {
   height: 150px;
   width: 250px;
@@ -45,14 +47,23 @@
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
-iframe { 
+iframe {
   display: block;
   width: 250px;
   height: 150px;
   margin: 20px auto;
+}
+
+a.facebook-button {
+  background-color: lightseagreen;
+  display: block;
+  border-radius: 11px;
+  width: 130px;
+  margin: 20px auto;
+
 }
 
 .facebook-button img {
@@ -69,5 +80,18 @@ iframe {
 
 .facebook-button:hover {
   color: #7ba9c3;
+  cursor: pointer;
+}
+
+button {
+  padding: 16px 32px;
+  margin: 20px 0;
+  color: white;
+  background-color: lightseagreen;
+  border: none;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: cadetblue;
   cursor: pointer;
 }
