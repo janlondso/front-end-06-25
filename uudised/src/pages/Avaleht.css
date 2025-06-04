@@ -1,0 +1,8 @@
+.image-avaleht {
+  width: 300px;
+  height: auto;
+}
+.image-avaleht:hover {
+  width: 320px;
+  height: auto;
+}
