@@ -11,3 +11,8 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>
 )
+
+// 1. 03.06. - React algus, pages, navigerimine
+// 2. 5.06. - useState, useRef
+// 3. 10.06 - veebimajutus: Firebase .web.app
+
