@@ -6,6 +6,7 @@ import Courses from './pages/Courses'
 import Contact from './pages/Contact'
 import AboutMe from './pages/AboutMe'
 import Home from './pages/Home'
+import Seaded from './pages/Seaded'
 
 function App() {
 
@@ -22,10 +23,16 @@ function App() {
         <button>Kontakt</button>
       </Link>
 
+      <Link to="/lang">
+        <button >Vali keel</button>
+      </Link>
+
       <Routes>
         <Route path='' element={<Home />} />
         <Route path='about-me' element={<AboutMe />} />
         <Route path='contact' element={ <Contact /> } />
+        <Route path="lang" element={<Seaded />} />
+
         {/*  */}
         <Route path='work' element={ <Work />} />
         <Route path='hobbies' element={ <Hobbies /> } />
