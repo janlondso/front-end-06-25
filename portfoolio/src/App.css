@@ -21,6 +21,7 @@
 
 .navigation-pictures {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: space-evenly;
   margin-top: 50px;
@@ -50,6 +51,7 @@
   text-decoration: none;
   font-family: "Roboto";
 }
+
 
 iframe {
   display: block;

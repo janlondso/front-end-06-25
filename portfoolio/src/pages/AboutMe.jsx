@@ -15,9 +15,7 @@ function AboutMe() {
           <img src="https://images.unsplash.com/photo-1614231125961-38323d6c485b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJhbmRzfGVufDB8fDB8fHww" alt="" />
           <p>Kursuste lehele</p>
         </Link>
-
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/nuDpLN2dazU?si=7VBuz5MUBUEupkZF" title="YouTube video player" frameborder="0" allow="" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/nuDpLN2dazU?si=7VBuz5MUBUEupkZF" title="YouTube video player" frameborder="0" allow="" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
   )
 }
