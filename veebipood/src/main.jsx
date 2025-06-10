@@ -19,3 +19,10 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+// 1. 3.06 - React algus, pages, navigeerimine
+
+// 2. 5.06. - UseState, useRef
+
+// 3. 10.06. Dünaamiline CSS, componendi väljatõste
+// veebimajutud: Firebase .web.app, toastify

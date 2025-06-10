@@ -13,6 +13,12 @@ const lisa = () => {
   } else {  
     alert("Toode lisatud: " + nimiRef.current.value);
   }
+  
+// Ternary operator
+
+  // nimiRef.current.value === "" ?
+  //   alert("Tühja nimetusega ei saa lisada!") :
+  //   alert("Toode lisatud: " + nimiRef.current.value)
 }
 
   return (

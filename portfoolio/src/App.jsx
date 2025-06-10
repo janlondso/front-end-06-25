@@ -7,26 +7,15 @@ import Contact from './pages/Contact'
 import AboutMe from './pages/AboutMe'
 import Home from './pages/Home'
 import Seaded from './pages/Seaded'
+import NavBar from './components/NavBar'
 
 function App() {
 
   return (
     <div className='app'>
 
-      <Link to="/">
-        <button>Avaleht</button>
-      </Link>
-      <Link to="/about-me">
-        <button>Minust</button>
-      </Link>
-      <Link to="/contact">
-        <button>Kontakt</button>
-      </Link>
-
-      <Link to="/lang">
-        <button >Vali keel</button>
-      </Link>
-
+      {/* <NavBar /> - läks avalehele */}
+      
       <Routes>
         <Route path='' element={<Home />} />
         <Route path='about-me' element={<AboutMe />} />
