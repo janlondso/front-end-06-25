@@ -4,3 +4,55 @@
   padding: 2rem;
   text-align: center;
 }
+
+/* Kujundus */
+.pakett {
+  margin: 20px;
+}
+
+.pakett:hover {
+  border: 3px solid purple;
+}
+
+.pakett-aktiivne {
+  margin: 20px;
+  border: 3px solid purple;
+}
+.must-ring {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+.kuldne-ring {
+  height: 50px;
+  width: 50px;
+  background-color: gold;
+  border-radius: 50%;
+}
+.sinine-ring {
+  height: 50px;
+  width: 50px;
+  background-color: navy;
+  border-radius: 50%;
+}
+.punane-ring {
+  height: 50px;
+  width: 50px;
+  background-color: darkred;
+  border-radius: 50%;
+}
+.lilla-ring {
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+  border-radius: 50%;
+}
+
+/* Hind */
+.aktiivne {
+  /* text-decoration: underline; */
+  font-weight: bold;
+  background-color: green;
+  color: #fff;
+}
