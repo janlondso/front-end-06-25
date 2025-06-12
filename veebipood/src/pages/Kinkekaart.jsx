@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 function Kinkekaart() {
@@ -15,16 +17,16 @@ function Kinkekaart() {
     // }
     
     if(emailRef.current.value === ""){
-      alert("Tühja emaili ei saa sisestada")
+      toast.error("Tühja emaili ei saa sisestada")
      return; // lõpetab funktsiooni
     }
 
     if(emailRef.current.value.includes("@") === false){
-      alert("Ilma @ märgita ei saa sisestada")
+      toast.error("Ilma @ märgita ei saa sisestada")
       return;
     }
 
-     alert("email sisestatud");
+     toast.success("email sisestatud");
     }
 
     return (
@@ -45,6 +47,12 @@ function Kinkekaart() {
       <label >Email</label><br />
       <input ref={emailRef} type="text" /><br />
       <button onClick={sisesta}>Sisesta</button>
+
+      <ToastContainer
+          position="bottom-right"
+          autoClose={4000}
+          theme="dark"
+      />
     </div>
     )
 }
