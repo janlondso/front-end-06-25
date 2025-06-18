@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "site": "portfolio-9bb88",
-    "public": "build",
+    "site": "jans-portfolio",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
