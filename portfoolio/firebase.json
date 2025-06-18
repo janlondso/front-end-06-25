@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "jans-portfolio",
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

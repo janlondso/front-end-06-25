@@ -1,9 +1,12 @@
 import { useState } from "react"
+import ArraysHome from "./ArraysHome";
 
 function Esindused() {
   const[linn, setLinn] = useState("Tallinn");
   return (
     <div>
+      <ArraysHome />
+      
       <div>Hetkel aktiivne linn on: {linn}</div>
       <button className={linn === "Tallinn" ? "linn-aktiivne" : undefined} onClick={() => setLinn("Tallinn")}>Tallinn</button>
       <button className={linn === "Tartu" ? "linn-aktiivne" : undefined} onClick={() => setLinn("Tartu")}>Tartu</button>

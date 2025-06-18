@@ -18,20 +18,22 @@ function Menu() {
       <Link to="/lisa-toode">
         <button>Toodet lisama</button>
       </Link>
-
-      <Link to="/esindused">
-        <button>Esindustes</button>
-      </Link>
-
+      
       <Link to="/osta-kinkekaart">
         <button>Kinkekaartide lehele</button>
+      </Link>
+      <Link to="/seaded">
+        <button>Seaded</button>
       </Link>
       <Link to="/kalkulaator">
         <button>Kalkulaator</button>
       </Link>
 
-      <Link to="/seaded">
-        <button>Seaded</button>
+      <Link to="/arrays">
+        <button>Array-d</button>
+      </Link>
+      <Link to="/halda">
+        <button>Mine arraysid muutma</button>
       </Link>
     </div>
   )

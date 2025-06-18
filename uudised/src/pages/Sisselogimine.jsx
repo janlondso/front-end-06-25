@@ -21,13 +21,13 @@ function Sisselogimine() {
             toast.error("Parool peab sisaldama vähemalt 8 tähemärki");
             return;
         }
-        // let upperCaseLetters = /[A-Z]/g;
+        // const upperCaseLetters = /[A-Z]/g;
         // if(paroolRef.current.value.match(upperCaseLetters)) {  
             //     toast.error("Parool peab sisaldama suuri tähti");
             //     return;
             // }
             
-            // let lowerCaseLetters = /[a-z]/g;
+            // const lowerCaseLetters = /[a-z]/g;
             // if(paroolRef.current.value.match(lowerCaseLetters)) {  
                 //     toast.error("Peab sisaldama väikseid tähti");
                 //     return;
@@ -58,6 +58,7 @@ function Sisselogimine() {
             <label>Parool</label> <br />
             <input ref={paroolRef} type="password" /> <br /> <br />
             <button onClick={logiSisse}>Kinnita</button> <br />
+
              <ToastContainer
                 position="bottom-right"
                 autoClose={4000}

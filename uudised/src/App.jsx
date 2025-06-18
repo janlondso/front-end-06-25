@@ -6,6 +6,9 @@ import Uudised from './pages/Uudised'
 import Kontakt from './pages/Kontakt'
 import Meist from './pages/Meist'
 import Sisselogimine from './pages/Sisselogimine'
+import Months from './pages/Months'
+import Animals from './pages/Animals'
+import Words from './pages/Words'
 
 function App() {
 
@@ -29,6 +32,15 @@ function App() {
       <Link to="/sisselogimine">
         <button>Sisselogimine</button>
       </Link>
+      <Link to="/months">
+        <button>Months</button>
+      </Link>
+      <Link to="/animals">
+        <button>Animals</button>
+      </Link>
+      <Link to="/words">
+        <button>Words</button>
+      </Link>
 
       <Routes>
         <Route path='' element={ <Avaleht /> } />
@@ -36,6 +48,9 @@ function App() {
         <Route path='kontakt' element={ <Kontakt />} />
         <Route path='meist' element={ <Meist /> } />
         <Route path='sisselogimine' element={ <Sisselogimine /> } />
+        <Route path='months' element={ <Months /> } />
+        <Route path='animals' element={ <Animals /> } />
+        <Route path='words' element={ <Words /> } />
       </Routes>
     </>
   )
