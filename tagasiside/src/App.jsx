@@ -8,6 +8,7 @@ function App() {
     <>
         <Link to="/"><button>Avaleht</button></Link>
         <Link to="/tagasiside"><button>Tagasiside</button></Link>
+        
         <Routes>
           <Route path='/'element={<div>Tere</div>} />
           <Route path='/tagasiside'element={<Tagasiside />} />

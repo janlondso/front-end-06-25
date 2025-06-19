@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-
 function Tagasiside() {
     const tagasisided = ["Oli hea", "Huvitav", "Teistsugune", "Põnev"];
-    const [m, f] = useState(tagasisided);
+    const [feedback, setFeedback] = useState(tagasisided);
 
   return (
     <div>
-        {m.map(tagasiside => <div>{tagasiside}</div>)}
+        <div>Kokku on: {feedback.length} tagsisidet.</div> <br />
+        {feedback.map(tagasiside => <div key={tagasiside}>{tagasiside}</div>)}
     </div>
   )
 }

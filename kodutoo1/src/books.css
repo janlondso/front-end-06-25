@@ -1,0 +1,49 @@
+.books {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid lightgray;
+}
+
+.sort-btn {
+    background-color: #222;
+    color: #e1dfdf;
+    font-size: 12px;
+    font-weight: 600;
+    width: 200px;
+    padding: 6px 12px;
+    margin: 3px;
+    border: 3px solid green;
+    border-right: 5px solid red;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filt-btn {
+    background-color: yellowgreen;
+    color: #222;
+    font-size: 12px;
+    font-weight: 600;
+    width: 200px;
+    padding: 6px 12px;
+    margin: 3px;
+    border: 3px solid green;
+    border-right: 5px solid red;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sort-btn:hover {
+    background-color: rgb(89, 89, 89);
+    border-color: none;
+    border-right: 5px solid green;
+}
+.filt-btn:hover {
+    background-color: rgb(187, 251, 90);
+    border-color: none;
+    border-right: 5px solid green;
+}
+.blue-btn {
+    background-color: navy;
+}

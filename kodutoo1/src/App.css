@@ -6,17 +6,30 @@
   /* text-align: center; */
 }
 /* Button */
+
+/* Main button */
+.main-btn button {
+  margin-right: 10px;
+  font-size: 12px;
+  padding: 8px 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  text-transform: uppercase;
+}
+
 .btn {
+  width: 200px;
   background-color: green;
   color: lightgray;
-  height: 95px;
-  width: 150px;
-  font-size: 18px;
-  padding: 16px 32px;
+  font-size: 14px;
+  padding: 4px 8px;
+  margin: 3px;
+  cursor: pointer;
 }
-.btn:hover {
+/* .btn:hover {
   height: 100px;
-}
+} */
 .btn:active {
   cursor: grab;
 }

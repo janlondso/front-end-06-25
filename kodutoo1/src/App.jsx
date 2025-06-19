@@ -1,9 +1,22 @@
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Books from './Books'
+import Numbrid from './Numbrid'
 
 function App() {
 
   return (
     <div>
+      <Link className='main-btn' to="/"><button>Home</button></Link>
+      <Link className='main-btn' to="/books"><button>Books</button></Link>
+      <Link className='main-btn' to="/numbrid"><button>Numbrid</button></Link>
+
+      <Routes>
+        <Route path='/' element={<div>Home</div>} />
+        <Route path='/books' element={<Books />} />
+        <Route path='/numbrid' element={<Numbrid />} />
+      </Routes>
+
       <button className='btn'>Button</button>
       <p className="text-1">Esimene tekst</p>
       <p className="text-2">Teine tekst</p>
