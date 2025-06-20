@@ -1,0 +1,11 @@
+
+    [
+        {"nimi": "Ferrari", "hind": 10000, "aktiivne": false, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScT5qZSTF3-Q8J0CAVGfRu8hrbG_RdCroxEg&s"},
+        {"nimi": "Lamborghini", "hind": 20000, "aktiivne": false, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP1Odo_PRR5B8K1hefxxYyfbTBbNoMMZtBRw&s"},
+        {"nimi": "BMW", "hind": 1000, "aktiivne": true, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwaj75lR24XwRaPR-Zj3aTndW0LXh9i_0Pw&s"},
+        {"nimi": "Audi", "hind": 10000, "aktiivne": true, "pilt": "https://media.audi.com/is/image/audi/country/ee/et/content/Custom%20Teasers/Homepage-laoautod-teaser-1080x1080-2.jpg?width=660&auto=webp"},
+        {"nimi": "Tesla", "hind": 10000, "aktiivne": true, "pilt": "https://www.animeoutline.com/wp-content/uploads/2024/04/sports_car_drawing_body_coloring.png"},
+        {"nimi": "Mercedes", "hind": 10000, "aktiivne": true, "pilt": "https://www.animeoutline.com/wp-content/uploads/2024/04/sports_car_drawing_body_coloring.png"},
+        {"nimi": "Ford", "hind": 15000, "aktiivne": true, "pilt": "https://www.animeoutline.com/wp-content/uploads/2024/04/sports_car_drawing_body_coloring.png"}
+    
+    ]

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ArraysHome from "./ArraysHome";
+import esindusedJSON from '../../data/esindused.json'
 
 function Esindused() {
   const[linn, setLinn] = useState("Tallinn");
@@ -15,12 +16,14 @@ function Esindused() {
 
     {linn === "Tallinn" &&
       <>
-      <div>Ülemiste</div>
+      {esindusedJSON.map( esindus => <div key={esindus}> {esindus} </div> )}
+
+      {/* <div>Ülemiste</div>
       <div>Rocca al Mare</div>
       <div>Magistrali</div>
       <div>Vesse</div>
       <div>Kristiine</div>
-      <div>Järveotsa</div>
+      <div>Järveotsa</div> */}
     </>}
 
    {linn === "Tartu" && 

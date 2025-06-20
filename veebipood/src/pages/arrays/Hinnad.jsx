@@ -1,12 +1,13 @@
 import { useState } from "react"
 import ArraysHome from "./ArraysHome"
+import hinnadFailist from '../../data/hinnad.json'
 
 
 function Hinnad() {
-    const [hinnad, setHinnad] = useState([44, 9, 12, 34, 65, 87, 116, 55, 77, 430]);
+    const [hinnad, setHinnad] = useState(hinnadFailist.slice());
 
     function reset() {
-        setHinnad([44, 9, 12, 34, 65, 87, 116, 55, 77, 430]);
+        setHinnad(hinnadFailist.slice());
     }
     
     function sorteeriKasvavalt(){
