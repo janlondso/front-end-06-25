@@ -1,0 +1,47 @@
+[
+  {
+    "nimi": "Toomas",
+    "ala": "keevitaja",
+    "telefon": "57456456"
+  },
+  {
+    "nimi": "Mart",
+    "ala": "insener",
+    "telefon": "55993300"
+  },
+  {
+    "nimi": "Egle",
+    "ala": "logistik",
+    "telefon": "56554433"
+  },
+  {
+    "nimi": "Silver",
+    "ala": "laojuht",
+    "telefon": "56884433"
+  },
+  {
+    "nimi": "Kaja",
+    "ala": "kontorijuht",
+    "telefon": "56778800"
+  },
+  {
+    "nimi": "Arvo Part",
+    "ala": "helilooja",
+    "telefon": "+372 52 222 222"
+    },
+    {
+    "nimi": "Kelly Sildaru",
+    "ala": "Püstolreporter",
+    "telefon": "56456788"
+    },
+    {
+    "nimi": "Lennart Meri",
+    "ala": "President",
+    "telefon": "+37256 999 999"
+    },
+    {
+    "nimi": "AJaagup Kreem",
+    "ala": "Välisturgude spetsialist",
+    "telefon": "+37256 111 111"
+    }
+]
