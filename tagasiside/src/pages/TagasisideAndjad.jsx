@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import nimed from './nimed.json'
+import nimed from '../nimed.json'
 
 function TagasisideAndjad() {
     const [nimekiri, setNimekiri] = useState(nimed);
