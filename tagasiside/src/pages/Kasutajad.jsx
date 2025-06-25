@@ -20,9 +20,9 @@ function Kasutajad() {
     }
 
     const kuvaIndexKasutajalt = () => {
-        const vastus = kasutajad.findIndex(element =>
+        const index = kasutajad.findIndex(element =>
             element.email === "Lucio_Hettinger@annie.ca");
-            console.log(vastus); 
+            console.log(index); 
     } 
 
     const kuvaIndexKasutajaltAlgabC = () => {
@@ -36,9 +36,31 @@ function Kasutajad() {
         uuendaKasutajad(kasutajad.slice());
     }
     const filterByLongtitude = () => {
-        const result= kasutajad.filter(element => element.address.geo.lng > 0);
+        const result = kasutajad.filter(element => element.address.geo.lng > 0);
         uuendaKasutajad(result);
     }
+
+    const sumIdValues = () => {
+        let sum = 0;
+        kasutajad.forEach(element => sum = sum + element.id);
+        console.log(sum);
+    }
+    const addZeroToPhone = () => {
+        const result = kasutajad.map(element => ({...element, phone: "000-" + element.phone}));
+        uuendaKasutajad(result);
+    }
+    const emailsArrayFunc = () => {
+        const result = kasutajad.map(element => element.email);
+        console.log(result);
+    }
+    const asendaAuueEGa = () => {
+        const result = kasutajad.map(element => (
+            {...element, company: {...element.company, catchPhrase: element.company.catchPhrase.replaceAll("a", "e")}}
+        ));
+        console.log(result);
+        uuendaKasutajad(result);
+    }
+
 
   return (
     <div>
@@ -49,6 +71,10 @@ function Kasutajad() {
         <button onClick={() => kuvaIndexKasutajaltAlgabC()}>Kuva esimeselt kasutajalt, kelle nime esimene taht on C</button>
         <button onClick={() => sortByLatitude()}>Aadress-i lat sorteerimine</button>
         <button onClick={() => filterByLongtitude()}>Ing mis on posiyiivne, ehk rohkem kui 0</button>
+        <button onClick={() => sumIdValues()}>Liida kasutajate id kokku</button>
+        <button onClick={() => addZeroToPhone()}>Liisa phone lahtrisse 000</button>
+        <button onClick={() => emailsArrayFunc()}>Uus emailide massiiv</button>
+        <button onClick={() => asendaAuueEGa()}>Asenda "catchphrase"-s "a" tahed "e"-ga</button>
             <div>
                 {kasutajad.map( element =>
                 <div key={element}>
