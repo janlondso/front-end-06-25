@@ -1,0 +1,15 @@
+
+[
+    {"eesnimi": "Jaan", "ametikoht": "Arendaja", "tel": "51234567"},
+    {"eesnimi": "Katrin", "ametikoht": "Projektijuht", "tel": "52345678"},
+    {"eesnimi": "Marek", "ametikoht": "Müügijuht", "tel": "53456789"},
+    {"eesnimi": "Liina", "ametikoht": "Turundusspetsialist", "tel": "54567890"},
+    {"eesnimi": "Peeter", "ametikoht": "Raamatupidaja", "tel": "55678901"},
+    {"eesnimi": "Annika", "ametikoht": "Personalijuht", "tel": "56789012"},
+    {"eesnimi": "Toomas", "ametikoht": "Analüütik", "tel": "57890123"},
+    {"eesnimi": "Evelin", "ametikoht": "Disainer", "tel": "58901234"},
+    {"eesnimi": "Kristjan", "ametikoht": "Tehniline tugi", "tel": "59012345"},
+    {"eesnimi": "Maarika", "ametikoht": "Klienditeenindaja", "tel": "60123456"},
+    {"eesnimi": "Indrek", "ametikoht": "Tootmisjuht", "tel": "61234567"}
+]
+

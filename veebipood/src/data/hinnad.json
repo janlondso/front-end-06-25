@@ -1,1 +1,12 @@
-[44, 9, 12, 34, 65, 87, 116, 55, 77, 430]
+[
+  {"number": 44, "sonana": "nelikümmend neli"},
+  {"number": 9, "sonana": "üheksa"},
+  {"number": 12, "sonana": "kaksteist"},
+  {"number": 3, "sonana": "kolm"},
+  {"number": 65, "sonana": "kuuskümmend viis"},
+  {"number": 87, "sonana": "kaheksakümmend seitse"},
+  {"number": 116, "sonana": "ükssada kuusteist"},
+  {"number": 55, "sonana": "viiskümmend viis"},
+  {"number": 77, "sonana": "seitsekümmend seitse"},
+  {"number": 430, "sonana": "nelisada kolmkümmend"}
+]

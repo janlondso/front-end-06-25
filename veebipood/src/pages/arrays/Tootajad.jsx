@@ -1,27 +1,40 @@
 import { useState } from "react";
 import ArraysHome from "./ArraysHome"
+import tootajadFailist from '../../data/tootajad.json'
+import { Link } from "react-router-dom";
+
 
 
 function Tootajad() {
 
-  const tootajad = ["Meelis", "Toomas", "Diana" ,"Aavo", "Eve", "Mati", "Mart", "Linda", "Siiri", "Ivo"];
-  const [personal, setPersonal] = useState(tootajad);
+  const [personal, setPersonal] = useState(tootajadFailist.slice());
 
   const sortAtoZ = () => {
-    personal.sort((a, b) => a.localeCompare(b));
+    personal.sort((a, b) => a.eesnimi.localeCompare(b.eesnimi));
     setPersonal(personal.slice());
   }
   const reset = () => {
-    setPersonal(tootajad);
+    setPersonal(tootajadFailist);
   }
 
   return (
     <div>
         <ArraysHome />
-        <div>Kokku on: {personal.length}</div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={sortAtoZ}>sort A to Z</button>
-        {personal.map(persoon => <div key={persoon}>{persoon}</div>)}
+        <div>Kokku on: {personal.length} töötajat</div>
+        <button onClick={reset}>Taasta</button>
+        <button onClick={sortAtoZ}>Sorteeri A-Z</button>
+
+        <div>
+          {personal.map(element => 
+            <div key={element.eesnimi}>
+            <div>{element.eesnimi}</div>
+            <div>{element.ametikoht}</div>
+            <div>{element.tel}</div>
+            <Link>
+              <button>Tutvu lähemalt</button>
+            </Link>
+          </div>)}
+        </div>
     </div>
   )
 }

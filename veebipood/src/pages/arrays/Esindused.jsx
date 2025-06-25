@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ArraysHome from "./ArraysHome";
 import esindusedJSON from '../../data/esindused.json'
+import { Link } from "react-router-dom";
 
 function Esindused() {
   const[linn, setLinn] = useState("Tallinn");
@@ -16,7 +17,13 @@ function Esindused() {
 
     {linn === "Tallinn" &&
       <>
-      {esindusedJSON.map( esindus => <div key={esindus}> {esindus} </div> )}
+      {esindusedJSON.map( esindus =>
+      <div key={esindus.keskus}>
+        {esindus.keskus}
+        <Link to={"/esindus/" + esindus.keskus}>
+          <button>Vt kontaktandmed</button>
+        </Link>
+      </div> )}
 
       {/* <div>Ülemiste</div>
       <div>Rocca al Mare</div>

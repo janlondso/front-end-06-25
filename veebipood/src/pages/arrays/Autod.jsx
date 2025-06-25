@@ -1,6 +1,7 @@
 import ArraysHome from "./ArraysHome"
 import { useState } from "react"
 import andmed from '../../data/autod.json'
+import { Link } from "react-router-dom";
 
 // renderdamine --> HTMLi esialgne väljakuvamine
 // re-renderdamine --> HTMLi uuesti kuvamine useState-i setteri abiga
@@ -68,9 +69,22 @@ function Autod() {
         setAutod(vastus);
     }
 
+    const muudaSuurteksTahtedeks = () => {
+        // const vastus = autod.map(auto => auto); <-- muudab koik samaks
+        // const vastus = autod.map(auto => ({nimi: auto.nimi.toUpperCase(), hind: auto.hind, aktiivne: auto.aktiivne, pilt: auto.pilt}));
+        const vastus = autod.map(auto => ({ ...auto, nimi: auto.nimi.toUpperCase()}));
+        setAutod(vastus);
+        // ...auto --> jatab auto seest koik ulejaanud asjad samaks, mis on temal premal
+    }
+    // autod.sort((a,b) => -1;) <-- ei tee midagi sest miinusmargiga ei vaheta jarjekorda
+    // .push(uus_vaartus) -- lisab loppu
+    //.splice(index,1) -- kustutab
+    // .sort((a,b) =>) Pluss/Miinus--> koguse samaks, muudab jarjekorda
+    // .filter(element =>) True/False --> kogus vaheneb
+    // .map(element => )-->UUS_Väärtus kogus sama, aga muudab igayht
+
     return (
     <div>
-        <button onClick={reset}>Reset</button>
         <ArraysHome />
         <button onClick={sorteeriAZ}>Sortreeri A-Z</button>
         <button onClick={sorteeriZA}>Sortreeri Z-A</button>
@@ -83,13 +97,21 @@ function Autod() {
         <button onClick={filtreeriTapselt8Tahelised}>Jäta alles täpselt 8 tähelised</button>
         <button onClick={filtreeriVah8Tahelised}>Jäta alles vähemalt 8 tähelised</button>
         <button onClick={filtreeriTeineTahtE}>Jäta alles millel teine taht on -e-</button>
-       
+        <br /><br />
+        <button onClick={muudaSuurteksTahtedeks}>Muuda kõikide autode nimed suurteks tähtedeks</button>
+        <br /><br />
+        <button onClick={reset}>Reset</button>
+
         <div>Autode arv: {autod.length} tk</div>
-        {autod.map(auto => <div key={auto}>
+        {autod.map(auto =>
+            <div key={auto.nimi}>
             <div>{auto.nimi}</div>
             <div>{auto.hind} €</div>
             <div><img className="pilt" src={auto.pilt} alt="" /></div>
             <div>{auto.aktiivne ? <button>Lisa ostukorvi</button> : <i>Toode pole aktiivne</i>}</div>
+            <Link to={"/auto/" + auto.nimi}>
+                <button>Vaata lähemalt</button>
+            </Link>
             </div>)}
     </div>
   )

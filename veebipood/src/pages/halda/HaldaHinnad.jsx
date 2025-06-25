@@ -8,15 +8,28 @@ function HaldaHinnad() {
 
       const [hinnad, setHinnad] = useState(hinnadFailist.slice());
       const hindRef = useRef();
+      const sonaRef = useRef();
 
       const lisa = () => {
-        hinnadFailist.push(hindRef.current.value);
+
+        if (hindRef.current.value <= 0){
+          alert("Hind peab olema positiivne!");
+          return;
+        }
+
+        hinnadFailist.push({
+          "number": hindRef.current.value,
+          "sonana": sonaRef.current.value
+        });
         setHinnad(hinnadFailist.slice()); 
+        hindRef.current.value = "";
+        sonaRef.current.value = "";
       }
 
        const kustuta = (index) => {
         hinnadFailist.splice(index, 1); // esimene nr mitmendat, teine mitu tk kustutada
         setHinnad(hinnadFailist.slice()); 
+
       }
 
   return (
@@ -24,6 +37,8 @@ function HaldaHinnad() {
       <HaldaHome />
       <label>Hind</label> <br />
       <input ref={hindRef} type="number"/> <br />
+      <label>Sonana</label><br />
+      <input ref={sonaRef} type="text" /><br />
       <button onClick={lisa}>Sisesta</button> <br />
       {/* <button onClick = {() => kustuta(0)}>Kustuta esimene</button>
       <button onClick = {() => kustuta(1)}>Kustuta teine</button>
@@ -35,14 +50,16 @@ function HaldaHinnad() {
           <tr>
             <th>Index</th>
             <th>Hind</th>
+            <th>Sõnana</th>
             <th>Kustuta</th>
           </tr>
         </thead>
        <tbody>
        {hinnad.map((hind, index) =>
-        <tr key={hind}>
+        <tr key={hind.number}>
           <td>{index}</td>
-          <td>{hind}</td>
+          <td>{hind.number}</td>
+          <td>{hind.sonana}</td>
           <td><button onClick={() => kustuta(index) }>x</button></td>
         </tr>)}
        

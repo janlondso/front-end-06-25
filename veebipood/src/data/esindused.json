@@ -1,8 +1,8 @@
 [
-    "Ülemiste",
-    "Rocca al Mare",
-    "Magistraali",
-    "Vesse",
-    "Kristiine",
-    "Järveotsa"
+   { "keskus": "Ülemiste", "tel": 5811138, "aadress": "Suur-Sojamae 89"},
+   { "keskus": "Rocca al Mare", "tel": 58700038, "aadress": "Loomaaia 123"},
+   { "keskus": "Magistraali", "tel": 587555568, "aadress": "M'e 321"},
+   { "keskus": "Vesse", "tel": 58222838, "aadress": "Vesi 55"},
+   { "keskus": "Kristiine", "tel": 5800838, "aadress": "Endla 55"},
+   { "keskus":"Järveotsa", "tel": 5878888, "aadress": "Järve 31"}
 ]

@@ -7,6 +7,8 @@ import { useRef, useState } from "react"
 function HaldaEsindused() {
   const [esindused, setEsindused] = useState(esindusedJSON.slice());
   const esindusRef = useRef();
+  const telefonRef = useRef();
+  const aadressRef = useRef();
  
   const lisa = () => {
         if(esindusRef.current.value === ""){
@@ -14,9 +16,15 @@ function HaldaEsindused() {
           return;
         }
 
-        esindusedJSON.push(esindusRef.current.value);
+        esindusedJSON.push({ 
+          "keskus": esindusRef.current.value,
+          "tel": telefonRef.current.value,
+          "aadress": aadressRef.current.value
+        });
         setEsindused(esindusedJSON.slice());
         esindusRef.current.value = "";
+        telefonRef.current.value = "";
+        aadressRef.current.value = "";
   }
 
   const kustuta = (index) => {
@@ -30,6 +38,10 @@ function HaldaEsindused() {
 
      <label>Esinduse nimi</label> <br />
       <input ref={esindusRef} type="text"/> <br />
+      <label>Esinduse telefon</label><br />
+      <input ref={telefonRef} type="text" /><br />
+      <label>Esinduse aadress</label><br />
+      <input ref={aadressRef} type="text" /><br />
       <button onClick={lisa}>Sisesta</button> <br />
 
      <div>Hindasid: {esindused.length} tk</div>
@@ -38,14 +50,18 @@ function HaldaEsindused() {
           <tr>
             <th>Index</th>
             <th>Esinduse nimi</th>
+            <th>Esinduse telefon</th>
+            <th>Esinduse aadress</th>
             <th>Kustuta</th>
           </tr>
         </thead>
        <tbody>
        {esindused.map((esindus, index) =>
-        <tr key={esindus}>
+        <tr key={esindus.keskus}>
           <td>{index}</td>
-          <td>{esindus}</td>
+          <td>{esindus.keskus}</td>
+          <td>{esindus.tel}</td>
+          <td>{esindus.aadress}</td>
           <td><button onClick={() => kustuta(index) }>x</button></td>
         </tr>)}
        

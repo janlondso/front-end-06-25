@@ -22,6 +22,18 @@ import HaldaHinnad from "./pages/halda/HaldaHinnad";
 import HaldaKasutajad from "./pages/halda/HaldaKasutajad";
 import HaldaTootajad from "./pages/halda/HaldaTootajad";
 import HaldaTooted from "./pages/halda/HaldaTooted";
+import MuudaAuto from "./pages/muuda/MuudaAuto";
+import MuudaEsindus from "./pages/muuda/MuudaEsindus";
+import MuudaHind from "./pages/muuda/MuudaHind";
+import MuudaKasutaja from "./pages/muuda/MuudaKasutaja";
+import MuudaTootaja from "./pages/muuda/MuudaTootaja";
+import MuudaToode from "./pages/muuda/MuudaToode";
+import YksAuto from "./pages/yks/YksAuto";
+import YksEsindus from "./pages/yks/YksEsindus";
+import YksHind from "./pages/yks/YksHind";
+import YksKasutaja from "./pages/yks/YksKasutaja";
+import YksTootaja from "./pages/yks/YksTootaja";
+import YksToode from "./pages/yks/YksToode";
 
 
 function App() {
@@ -53,6 +65,20 @@ function App() {
         <Route path="/halda-kasutajad" element={<HaldaKasutajad />} />
         <Route path="/halda-tootajad" element={<HaldaTootajad />} />
         <Route path="/halda-tooted" element={<HaldaTooted />} />
+
+        <Route path="/muuda-auto" element={<MuudaAuto />} />
+        <Route path="/muuda-esindus" element={<MuudaEsindus />} />
+        <Route path="/muuda-hind" element={<MuudaHind />} />
+        <Route path="/muuda-kasutaja" element={<MuudaKasutaja />} />
+        <Route path="/muuda-tootaja" element={<MuudaTootaja />} />
+        <Route path="/muuda-toode" element={<MuudaToode/>} />
+
+        <Route path="/auto/:mark" element={<YksAuto />} />
+        <Route path="/esindus/:pood" element={<YksEsindus />} />
+        <Route path="/hind/:index" element={<YksHind />} />
+        <Route path="/kasutaja" element={<YksKasutaja />} />
+        <Route path="/tootaja" element={<YksTootaja />} />
+        <Route path="/toode" element={<YksToode/>} />
         
         <Route path="/*" element={<NotFound />} />
       </Routes>
