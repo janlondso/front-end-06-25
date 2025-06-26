@@ -12,7 +12,7 @@ export default function Avaleht() {
       {joogid.map((jook, index) =>
         <div key={jook}>
           <div>{index + 1}</div>
-          <span>{jook}</span> <br />
+          <div>{jook}</div>
           <Link to={"/jook/" + index}>
           <button>Vaata lähemalt</button>
           </Link>

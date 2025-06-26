@@ -14,10 +14,10 @@ function App() {
       <Link to="/halda"><button>Halda jooke</button></Link>
 
       <Routes>
-        <Route path='/' element={<Avaleht />} />
-        <Route path='/lisa' element={<LisaJook />} />
-        <Route path='/halda' element={<HaldaJooke />} />
-        <Route path='/jook/:number' element={<Jook />} />
+        <Route path='' element={<Avaleht />} />
+        <Route path='lisa' element={<LisaJook />} />
+        <Route path='halda' element={<HaldaJooke />} />
+        <Route path='jook/:number' element={<Jook />} />
       </Routes>
     </div>
   );
