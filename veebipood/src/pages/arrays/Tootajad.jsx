@@ -25,12 +25,12 @@ function Tootajad() {
         <button onClick={sortAtoZ}>Sorteeri A-Z</button>
 
         <div>
-          {personal.map(element => 
-            <div key={element.eesnimi}>
-            <div>{element.eesnimi}</div>
-            <div>{element.ametikoht}</div>
-            <div>{element.tel}</div>
-            <Link>
+          {personal.map(persoon => 
+            <div key={persoon.eesnimi}>
+            <div>{persoon.eesnimi}</div>
+            <div>{persoon.ametikoht}</div>
+            <div>{persoon.tel}</div>
+            <Link to={"/tootaja/" + persoon.eesnimi}>
               <button>Tutvu lähemalt</button>
             </Link>
           </div>)}

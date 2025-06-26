@@ -42,7 +42,7 @@ function Tooted() {
             <div>{toode.hind}</div>
             <div>{toode.aktiivne ? <button>Lisa ostukorvi</button> : <i>Toode pole aktiivne</i>}</div>
             <div><img className="pilt" src={toode.pilt} alt="" /></div>
-            <Link>
+            <Link to={"/toode/" + toode.nimi}>
               <button>Tutvu tootega lähemalt</button>
             </Link>
           </div>)}

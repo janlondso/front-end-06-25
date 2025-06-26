@@ -77,8 +77,8 @@ function App() {
         <Route path="/esindus/:pood" element={<YksEsindus />} />
         <Route path="/hind/:index" element={<YksHind />} />
         <Route path="/kasutaja" element={<YksKasutaja />} />
-        <Route path="/tootaja" element={<YksTootaja />} />
-        <Route path="/toode" element={<YksToode/>} />
+        <Route path="/tootaja/:persoon" element={<YksTootaja />} />
+        <Route path="/toode/:produkt" element={<YksToode/>} />
         
         <Route path="/*" element={<NotFound />} />
       </Routes>

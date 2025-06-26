@@ -18,6 +18,18 @@
 .pilt:active {
   transform: scale(90%);
 }
+.pilt-big {
+  width: 300px;
+  border-radius: 11px;
+}
+
+.pilt-big:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+.pilt-big:active {
+  transform: scale(90%);
+}
 
 .summa-aktiivne {
   color: rgb(227 6 140 );
