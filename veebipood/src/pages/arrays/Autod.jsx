@@ -2,6 +2,7 @@ import ArraysHome from "./ArraysHome"
 import { useState } from "react"
 import andmed from '../../data/autod.json'
 import { Link } from "react-router-dom";
+// import ostukorvFailist from '../../data/ostukorv.json'
 
 // renderdamine --> HTMLi esialgne väljakuvamine
 // re-renderdamine --> HTMLi uuesti kuvamine useState-i setteri abiga
@@ -83,6 +84,15 @@ function Autod() {
     // .filter(element =>) True/False --> kogus vaheneb
     // .map(element => )-->UUS_Väärtus kogus sama, aga muudab igayht
 
+        const lisaOstukorvi = (toode) => {
+            // ostukorvFailist.push(toode);
+            const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
+            ostukorvLS.push(toode);
+            localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
+        }
+
+        // tuleb LS tuhjendada -- parem klops -inpect - local storage- parem klops - delete
+
     return (
     <div>
         <ArraysHome />
@@ -108,7 +118,7 @@ function Autod() {
             <div>{auto.nimi}</div>
             <div>{auto.hind} €</div>
             <div><img className="pilt" src={auto.pilt} alt="" /></div>
-            <div>{auto.aktiivne ? <button>Lisa ostukorvi</button> : <i>Toode pole aktiivne</i>}</div>
+            <div>{auto.aktiivne ? <button onClick={() => lisaOstukorvi(auto)}>Lisa ostukorvi</button> : <i>Toode pole aktiivne</i>}</div>
             <Link to={"/auto/" + auto.nimi}>
                 <button>Vaata lähemalt</button>
             </Link>

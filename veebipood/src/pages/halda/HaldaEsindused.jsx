@@ -22,6 +22,7 @@ function HaldaEsindused() {
           "aadress": aadressRef.current.value
         });
         setEsindused(esindusedJSON.slice());
+        // alumised read teevad vormi inputit tyhjaks
         esindusRef.current.value = "";
         telefonRef.current.value = "";
         aadressRef.current.value = "";

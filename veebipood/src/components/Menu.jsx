@@ -1,8 +1,27 @@
 import { Link } from "react-router-dom"
+import { useTranslation } from 'react-i18next';
+
 
 function Menu() {
+  const { t, i18n } = useTranslation();
+  // return <h1>{t('Welcome to React')}</h1>
+
+  const changeLanguageEN = () => {
+    i18n.changeLanguage("en");
+    localStorage.setItem("keel","en")
+  }
+
+  const changeLanguageET = () => {
+    i18n.changeLanguage("et");
+    localStorage.setItem("keel","et")
+
+  }
+
   return (
     <div>
+      <button onClick={changeLanguageEN}>English</button>
+      <button onClick={changeLanguageET}>Eesti</button>
+
         <Link to="/">
          <img
         className="pilt"
@@ -12,18 +31,18 @@ function Menu() {
       </Link>
      
       <Link to="/ostukorv">
-        <button>Ostukorvi</button>
+        <button>{t("menu.cart")}</button>
       </Link>
 
       <Link to="/lisa-toode">
-        <button>Toodet lisama</button>
+        <button>{t("menu.add-product")}</button>
       </Link>
       
       <Link to="/osta-kinkekaart">
-        <button>Kinkekaartide lehele</button>
+        <button>{t("menu.giftcards")}</button>
       </Link>
       <Link to="/seaded">
-        <button>Seaded</button>
+        <button>{t("menu.settings")}</button>
       </Link>
       <Link to="/kalkulaator">
         <button>Kalkulaator</button>

@@ -34,14 +34,32 @@ import YksHind from "./pages/yks/YksHind";
 import YksKasutaja from "./pages/yks/YksKasutaja";
 import YksTootaja from "./pages/yks/YksTootaja";
 import YksToode from "./pages/yks/YksToode";
+import { useState } from "react";
 
 
 function App() {
+  const [kasTume, setTume] = useState(JSON.parse(localStorage.getItem("tume")));
+
+  const tumedaks = () => {
+    setTume(true);
+    localStorage.setItem("tume", JSON.stringify(true)); // jutumargid vaja true-le yle panna sest
+    // localStorage nõuab et kõik väärtused oleksid sõnade kujul (string kujul)
+  }
+  const heledaks = () => {
+    setTume(false);
+    localStorage.setItem("tume", JSON.stringify(false));
+  }
   return (
     <>
+    <div className={kasTume ? "tume" : undefined}>
+
       <Menu />
+
+      <button onClick={tumedaks}>Tume</button>
+      <button onClick={heledaks}>Hele</button>
    
   {/*  path - mis jargneb baasURL-le. localhost: 5173 */}
+
       <Routes>
         <Route path="/" element={<Avaleht />} />
         <Route path="/ostukorv" element={<Ostukorv />} />
@@ -66,12 +84,12 @@ function App() {
         <Route path="/halda-tootajad" element={<HaldaTootajad />} />
         <Route path="/halda-tooted" element={<HaldaTooted />} />
 
-        <Route path="/muuda-auto" element={<MuudaAuto />} />
-        <Route path="/muuda-esindus" element={<MuudaEsindus />} />
-        <Route path="/muuda-hind" element={<MuudaHind />} />
-        <Route path="/muuda-kasutaja" element={<MuudaKasutaja />} />
-        <Route path="/muuda-tootaja" element={<MuudaTootaja />} />
-        <Route path="/muuda-toode" element={<MuudaToode/>} />
+        <Route path="/muuda-auto/:index" element={<MuudaAuto />} />
+        <Route path="/muuda-esindus/:index" element={<MuudaEsindus />} />
+        <Route path="/muuda-hind/:index" element={<MuudaHind />} />
+        <Route path="/muuda-kasutaja/:index" element={<MuudaKasutaja />} />
+        <Route path="/muuda-tootaja/:index" element={<MuudaTootaja />} />
+        <Route path="/muuda-toode/:index" element={<MuudaToode/>} />
 
         <Route path="/auto/:mark" element={<YksAuto />} />
         <Route path="/esindus/:pood" element={<YksEsindus />} />
@@ -82,6 +100,7 @@ function App() {
         
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      </div>
     </>
   );
 }

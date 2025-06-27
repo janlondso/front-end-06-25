@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import HaldaHome from "./HaldaHome"
 import andmed from '../../data/autod.json'
+import { Link } from "react-router-dom";
 
 function HaldaAutod() {
       const [autod, setAutod] = useState(andmed);
@@ -89,6 +90,7 @@ function HaldaAutod() {
             <th>Auto aktiivne</th>
             <th>Auto pilt</th>
             <th>Kustuta</th>
+            <th>Muuda</th>
           </tr>
         </thead>
         <tbody>
@@ -100,6 +102,9 @@ function HaldaAutod() {
             <td>{auto.aktiivne + 0}</td>
             <td><img style={{width:"50px", borderRadius: "10px"}} className="pilt" src={auto.pilt} alt="" /></td>
             <td><button onClick={ () => kustuta(index)}>x</button></td>
+            <Link to={"/muuda-auto/" + index}>
+            <button>Muuda</button>
+            </Link>
           </tr>)}
         </tbody>
       </table>

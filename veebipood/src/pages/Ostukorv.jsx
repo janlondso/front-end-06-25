@@ -1,4 +1,6 @@
 import { useState } from "react"
+// import ostukorvFailist from '../data/ostukorv.json'
+import { useTranslation } from "react-i18next";
 
 // renderdus - refresh või satutakse lehele ja kuvatakse esmakordselt välja HTML
 // re-renderdus - kui useState-i setteriga uuendatakse HTMLi
@@ -7,17 +9,31 @@ import { useState } from "react"
 // välja arvatud tsüklid, kus on vaja teha manuaalne meeldejätmine key={} abil
 
 function Ostukorv() {
-  const [tooted, setTooted] = useState(["Coca", "Fanta", "Sprite"]);
+    const { t } = useTranslation(); // votan LocalStotag-st seejarel jutumargid maha
+  
+  const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
+
+  const kustuta = (index) => {
+    tooted.splice(index, 1) 
+    setTooted(tooted.slice());
+
+    localStorage.setItem("ostukorv", JSON.stringify(tooted))
+  }
+
   return (
     <div>
        {tooted.length > 0 ?
         <>
-          <button onClick={() => setTooted([])}>Tühjenda</button>
-          <div>Ostukorvis on {tooted.length} ese(t)</div>
+          <button onClick={() => setTooted([])}>{t("cart.empty-button")}</button>
+          <div>{t("cart.in-cart")} {tooted.length} {t("cart.item(s)")}</div>
         </> : 
-        <div>Ostukorv on tühi</div>
+        <div>{t("cart.empty-cart")}</div>
         }
-      {tooted.map(toode => <div key={toode}>{toode}</div>)}
+      {tooted.map((toode, index) =>
+      <div key={index}>
+        {toode.nimi} - {toode.hind} €
+        <button onClick={() => kustuta(index)}>x</button>
+        </div>)}
     </div>
   )
 }

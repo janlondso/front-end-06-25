@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -46,3 +46,13 @@
 .keel-aktiivne {
   font-size: 1.1em;
 }
+
+.tume {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+/* .hele {
+  background-color: white;
+  color: black;
+} */
