@@ -13,17 +13,17 @@ function MuudaAuto() {
   
 
   const muuda = () => {
-        if(nimiRef.current.value  === ""){
+        if(nimiRef.current.value  === "") {
           alert("Tuhja nimega ei saa sisestada!");
           return;
         }
       
-        if(hindRef.current.value  === ""){
+        if(hindRef.current.value  === "") {
           alert("Tuhja hind ei saa sisestada!");
           return;
         }
      
-        if(piltRef.current.value  === ""){
+        if(piltRef.current.value  === "") {
           alert("Tuhja pildita ei saa sisestada!");
           return;
         }

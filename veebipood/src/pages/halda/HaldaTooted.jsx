@@ -2,6 +2,7 @@ import HaldaHome from "./HaldaHome"
 import tootedFailist from '../../data/tooted.json'
 import { useState } from "react"
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 
 function HaldaTooted() {
@@ -69,6 +70,7 @@ function HaldaTooted() {
             <th>Aktiivne</th>
             <th>Pilt</th>
             <th>Kustuta</th>
+            <th>Muuda</th>
           </tr>
         </thead>
         <tbody>
@@ -80,6 +82,9 @@ function HaldaTooted() {
             <td>{toode.aktiivne + 0}</td>
             <td><img style={{width:"50px", borderRadius: "10px"}} className="pilt" src={toode.pilt} alt="" /></td>
             <td><button onClick={() => kustuta(index)}>x</button></td>
+          <Link to={"/muuda-toode/" + index}>
+            <button>Muuda</button>
+            </Link>
           </tr>)}
         </tbody>
       </table>
