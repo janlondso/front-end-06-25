@@ -48,7 +48,6 @@ function MuudaAuto() {
       <input ref={piltRef} defaultValue={leitud.pilt} type="text" /> <br />
       <label>Auto aktiivne</label> <br />
       <input ref={aktiivneRef} defaultChecked={leitud.aktiivne} type="checkbox" /> <br />
-      
       <button onClick={muuda}>Muuda</button>
     </div>
   )

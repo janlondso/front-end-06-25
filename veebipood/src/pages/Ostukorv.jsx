@@ -14,10 +14,9 @@ function Ostukorv() {
   const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
 
   const kustuta = (index) => {
-    tooted.splice(index, 1) 
+    tooted.splice(index, 1); 
     setTooted(tooted.slice());
-
-    localStorage.setItem("ostukorv", JSON.stringify(tooted))
+    localStorage.setItem("ostukorv", JSON.stringify(tooted));
   }
 
   return (

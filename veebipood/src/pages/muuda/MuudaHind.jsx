@@ -2,7 +2,9 @@
 
 function MuudaHind() {
   return (
-    <div>MuudaHind</div>
+    <div>
+      
+    </div>
   )
 }
 

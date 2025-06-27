@@ -2,6 +2,7 @@ import HaldaHome from "./HaldaHome"
 import tootajadFailist from '../../data/tootajad.json'
 import { useState } from "react"
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -63,16 +64,20 @@ function HaldaTootajad() {
             <th>Ametikoht</th>
             <th>Telefon</th>
             <th>Kustuta</th>
+            <th>Muuda</th>
           </tr>
         </thead>
        <tbody>
         {tootajad.map((tootaja, index) =>
         <tr key={tootaja.eesnimi}>
-          <td>{index + 1}</td>
+          <td>{index}</td>
           <td>{tootaja.eesnimi}</td>
           <td>{tootaja.ametikoht}</td>
           <td>{tootaja.tel}</td>
           <td><button onClick={() => kustuta(index)}>x</button></td>
+          <Link to={"/muuda-tootaja/" + index}>
+            <button>Muuda</button>
+          </Link>
         </tr>
         )}
        </tbody>
