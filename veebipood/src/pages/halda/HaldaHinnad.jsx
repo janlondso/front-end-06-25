@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import HaldaHome from "./HaldaHome"
 import hinnadFailist from '../../data/hinnad.json'
+import { Link } from "react-router-dom";
 
 
 
@@ -52,6 +53,7 @@ function HaldaHinnad() {
             <th>Hind</th>
             <th>Sõnana</th>
             <th>Kustuta</th>
+            <th>Muuda</th>
           </tr>
         </thead>
        <tbody>
@@ -61,6 +63,9 @@ function HaldaHinnad() {
           <td>{hind.number}</td>
           <td>{hind.sonana}</td>
           <td><button onClick={() => kustuta(index) }>x</button></td>
+          <Link to={"/muuda-hind/" + index}>
+          <button>Muuda</button>
+          </Link>
         </tr>)}
        
        </tbody>
