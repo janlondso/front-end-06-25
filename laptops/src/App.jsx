@@ -8,6 +8,7 @@ import Kontakt from './pages/Kontakt'
 import Seaded from './pages/Seaded'
 import { useState } from 'react'
 import { useRef } from 'react'
+import Ostukorv from './pages/Ostukorv'
 
 function App() {
   const [sisseLogitud, muudaSisseLogitud] = useState("ei");
@@ -61,6 +62,9 @@ function App() {
       <Link to="/seaded">
         <button>Seaded</button>
       </Link>
+      <Link to="/cart">
+        <button>Ostukorv</button>
+      </Link>
 
       <Routes>
         <Route path='' exact element={ <Avaleht /> } />
@@ -69,6 +73,7 @@ function App() {
         <Route path='about-us' exact element={ <Meist /> } />
         <Route path='contact' exact element={ <Kontakt /> } />
         <Route path='seaded' element={ <Seaded />} />
+        <Route path='cart' exact element={ <Ostukorv /> } />
       </Routes>
     </div>
   )
