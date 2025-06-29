@@ -2,7 +2,7 @@ import { useState } from "react";
 import nimekiri from '../tootajad.json'
 
 function Meist() {
-    const [kontaktid, uuendaKontakt] = useState(nimekiri);
+    const [kontaktid] = useState(nimekiri);
     const [n2itaKontakt, uuendaN2itaKontakt] = useState("");
     const [valitud, setValitud] = useState("");
 
