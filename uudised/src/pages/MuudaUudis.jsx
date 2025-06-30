@@ -5,6 +5,7 @@ function MuudaUudis() {
     const { index } = useParams();
     const uudisRef = useRef();
     const uudisedLS = JSON.parse(localStorage.getItem("uudised")) || [];
+    // Võtan kõik uudised LocalStoragest, võta jutumärgid maha ning kui on tühjus, siis võta hoopis tühjad kandilised sulud.
     const leitudUudis = uudisedLS[index]; // const found = array[i]
 
     const muuda = () => {
@@ -17,6 +18,7 @@ function MuudaUudis() {
     <div>
       <label>Uudis</label> <br />
       <input ref={uudisRef} type="text" defaultValue={leitudUudis} /> <br />
+      {/* defaultValue sisestab inputi vana uudise mille ref-iga vahetatakse v2lja */}
       <button onClick={muuda}>Muuda</button>
     </div>
   )

@@ -15,9 +15,7 @@ const lisa = () => {
   } else {  
     toast.success("Toode lisatud: " + nimiRef.current.value);
   }
-  
-// Ternary operator
-
+  // Ternary operator
   // nimiRef.current.value === "" ?
   //   alert("Tühja nimetusega ei saa lisada!") :
   //   alert("Toode lisatud: " + nimiRef.current.value)
