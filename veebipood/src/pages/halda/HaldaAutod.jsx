@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function HaldaAutod() {
       const [autod, setAutod] = useState(andmed);
-
       const [unikaalne, setUnikaalne] = useState(true);
       const nimiRef = useRef();
       const hindRef = useRef()
@@ -89,13 +88,13 @@ function HaldaAutod() {
 
         {unikaalne === false && <div className="red">Auto nimi peab olema unikaalne</div>}
 
-        <label htmlFor="">Auto nimi</label> <br />
+        <label>Auto nimi</label> <br />
         <input onChange={kasUnikaalne} ref={nimiRef} type="text"/> <br />
-        <label htmlFor="">Auto hind</label> <br />
+        <label>Auto hind</label> <br />
         <input ref={hindRef} type="text"/> <br />
-        <label htmlFor="">Auto pilt</label> <br />
+        <label>Auto pilt</label> <br />
         <input ref={piltRef} type="text"/> <br />
-        <label htmlFor="">Auto aktiivne</label> <br />
+        <label>Auto aktiivne</label> <br />
         <input ref={aktiivneRef} type="checkbox"/> <br />
         <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
         <div>Autosid: {autod.length} tk</div>

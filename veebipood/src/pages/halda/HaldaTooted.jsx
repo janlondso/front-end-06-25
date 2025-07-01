@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 function HaldaTooted() {
   const [tooted, uuendaTooted] = useState(tootedFailist);
+  const [unikaalne, setUnikaalne] = useState(true);
   const nimiRef = useRef();
   const hindRef = useRef();
   const aktiivneRef = useRef();
@@ -47,18 +48,34 @@ function HaldaTooted() {
         uuendaTooted(tootedFailist.slice());
       }
 
+      const kasUnikaalne = () => { 
+        //YksAuto failis vaatasime kas leiame auto.nimi URlist
+        // siin vaatame kas leiame auto nime inputi vaartusest
+        const vastus = tootedFailist.find(toode => toode.nimi === nimiRef.current.value);
+        if(vastus === undefined){
+          setUnikaalne(true);
+          // korras
+        } else {
+          //veateade
+          setUnikaalne(false);
+        }
+      }
+
   return (
     <div>
       <HaldaHome />
+
+      {unikaalne === false && <div className="red">Toote nimi peab olema unikaalne</div>}
+
       <label>Toote nimi</label> <br />
-        <input ref={nimiRef} type="text"/> <br />
+        <input onChange={kasUnikaalne} ref={nimiRef} type="text"/> <br />
         <label>Toote hind</label> <br />
         <input ref={hindRef} type="text"/> <br />
         <label>Toode pilt</label> <br />
         <input ref={piltRef} type="text"/> <br />
         <label>Toode aktiivne</label> <br />
         <input ref={aktiivneRef} type="checkbox"/> <br />
-        <button onClick={lisa}>Sisesta</button> <br />
+        <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
         <div>Tooteid kokku: {tooted.length} tk</div>
         <br />
         <table>
@@ -76,7 +93,7 @@ function HaldaTooted() {
         <tbody>
         {tooted.map((toode, index) =>
           <tr key={toode.nimi}>
-            <td>{index + 1 + "."}</td>
+            <td>{index}</td>
             <td>{toode.nimi}</td>
             <td>{toode.hind}</td>
             <td>{toode.aktiivne + 0}</td>

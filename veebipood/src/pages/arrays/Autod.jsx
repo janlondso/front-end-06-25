@@ -25,10 +25,6 @@ function Autod() {
         setAutod(vastus);
     }
 
-    // const reset = () => {
-    //     setAutod(autod.slice())
-    // }
-
     const sorteeriAZ = () => {
         autod.sort((a,b) => a.nimi.localeCompare(b.nimi)); // tahestiku jargi
         setAutod(autod.slice());
@@ -101,17 +97,12 @@ function Autod() {
             ostukorvLS.push(toode);
             localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
         }
-
         // tuleb LS tuhjendada -- parem klops -inpect - local storage- parem klops - delete
-
-
-         const arvutaKokku = () => { 
+        const arvutaKokku = () => { 
         let summa = 0;
-       
-        autod.forEach( auto => summa + auto.hind);
-    
-    return summa; // returni jargne laheb HTML-i
-    }
+        autod.forEach(auto => summa =  summa + auto.hind);
+        return summa; // returni jargne laheb HTML-i
+        }
 
 
     return (
