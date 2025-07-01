@@ -1,5 +1,5 @@
 import ArraysHome from "./ArraysHome"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import andmed from '../../data/autod.json'
 import { Link } from "react-router-dom";
 // import ostukorvFailist from '../../data/ostukorv.json'
@@ -17,6 +17,17 @@ import { Link } from "react-router-dom";
 
 function Autod() {
     const [autod, setAutod] = useState(andmed.slice());
+    
+    const otsingRef = useRef();
+
+    const otsi = () => {
+        const vastus = andmed.filter(auto => auto.nimi.includes(otsingRef.current.value));
+        setAutod(vastus);
+    }
+
+    // const reset = () => {
+    //     setAutod(autod.slice())
+    // }
 
     const sorteeriAZ = () => {
         autod.sort((a,b) => a.nimi.localeCompare(b.nimi)); // tahestiku jargi
@@ -50,23 +61,23 @@ function Autod() {
     }
 
     const filtreeriSisaldabLyhenditER = () => {
-        const vastus = autod.filter(auto => auto.nimi.includes("er"));
+        const vastus = andmed.filter(auto => auto.nimi.includes("er"));
         setAutod(vastus);
     }
     const filtreeriIgaLopevad = () => {
-        const vastus = autod.filter(auto => auto.nimi.endsWith("i"));
+        const vastus = andmed.filter(auto => auto.nimi.endsWith("i"));
         setAutod(vastus);
     }
     const filtreeriTapselt8Tahelised = () => {
-        const vastus = autod.filter(auto => auto.nimi.length === 8);
+        const vastus = andmed.filter(auto => auto.nimi.length === 8);
         setAutod(vastus);
     }
     const filtreeriVah8Tahelised = () => {
-        const vastus = autod.filter(auto => auto.nimi.length >= 8);
+        const vastus = andmed.filter(auto => auto.nimi.length >= 8);
         setAutod(vastus);
     }
     const filtreeriTeineTahtE = () => {
-        const vastus = autod.filter(auto => auto.nimi[1] === "e");
+        const vastus = andmed.filter(auto => auto.nimi[1] === "e");
         setAutod(vastus);
     }
 
@@ -93,8 +104,22 @@ function Autod() {
 
         // tuleb LS tuhjendada -- parem klops -inpect - local storage- parem klops - delete
 
+
+         const arvutaKokku = () => { 
+        let summa = 0;
+       
+        autod.forEach( auto => summa + auto.hind);
+    
+    return summa; // returni jargne laheb HTML-i
+    }
+
+
     return (
     <div>
+        <div>Autode hinnad kokku: {arvutaKokku() }</div>
+        <input ref={otsingRef}  onChange={otsi} type="text" /> <br />
+        <button onClick={reset}>Reset</button>
+
         <ArraysHome />
         <button onClick={sorteeriAZ}>Sortreeri A-Z</button>
         <button onClick={sorteeriZA}>Sortreeri Z-A</button>

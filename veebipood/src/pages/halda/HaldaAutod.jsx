@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 
 function HaldaAutod() {
       const [autod, setAutod] = useState(andmed);
+
+      const [unikaalne, setUnikaalne] = useState(true);
       const nimiRef = useRef();
-      const hindRef = useRef();
+      const hindRef = useRef()
       const aktiivneRef = useRef();
       const piltRef = useRef();
 
@@ -63,6 +65,19 @@ function HaldaAutod() {
         setAutod(andmed.slice());
       }
 
+      const kasUnikaalne = () => { 
+        //YksAuto failis vaatasime kas leiame auto.nimi URlist
+        // siin vaatame kas leiame auto nime inputi vaartusest
+        const vastus = andmed.find(auto => auto.nimi === nimiRef.current.value);
+        if(vastus === undefined){
+          setUnikaalne(true);
+          // korras
+        } else {
+          //veateade
+          setUnikaalne(false);
+        }
+      }
+
     return (
       <div>
         <HaldaHome />
@@ -71,15 +86,18 @@ function HaldaAutod() {
         <button onClick={kustutaKolmas}>Kustuta kolmas</button>
         <button onClick={kustutaNeljas}>Kustuta neljas</button>
         <br /><br />
+
+        {unikaalne === false && <div className="red">Auto nimi peab olema unikaalne</div>}
+
         <label htmlFor="">Auto nimi</label> <br />
-        <input ref={nimiRef} type="text"/> <br />
+        <input onChange={kasUnikaalne} ref={nimiRef} type="text"/> <br />
         <label htmlFor="">Auto hind</label> <br />
         <input ref={hindRef} type="text"/> <br />
         <label htmlFor="">Auto pilt</label> <br />
         <input ref={piltRef} type="text"/> <br />
         <label htmlFor="">Auto aktiivne</label> <br />
         <input ref={aktiivneRef} type="checkbox"/> <br />
-        <button onClick={lisa}>Sisesta</button> <br />
+        <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
         <div>Autosid: {autod.length} tk</div>
       <table>
         <thead>

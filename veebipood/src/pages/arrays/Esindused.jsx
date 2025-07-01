@@ -1,13 +1,31 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import ArraysHome from "./ArraysHome";
 import esindusedJSON from '../../data/esindused.json'
 import { Link } from "react-router-dom";
 
 function Esindused() {
   const[linn, setLinn] = useState("Tallinn");
+  const [esindused, setEsindused] = useState(esindusedJSON.slice());
+  const otsingRef = useRef();
+
+  const otsi = () => {
+    const vastus = esindusedJSON.filter(esindus =>
+      esindus.keskus.toLowerCase().includes(otsingRef.current.value.toLowerCase())
+    );
+      setEsindused(vastus);
+  }
+
+  const arvutaKokku = () => { 
+        let summa = 0;
+        esindused.forEach( esindus => summa = summa + esindus.keskus.length);
+        return summa; // returni jargne laheb HTML-i
+    }
+
   return (
     <div>
       <ArraysHome />
+      <div>Esinduste keskuste tahemargid kokku: {arvutaKokku()}</div>
+      <input ref={otsingRef} onChange={otsi} type="text" />
       
       <div>Hetkel aktiivne linn on: {linn}</div>
       <button className={linn === "Tallinn" ? "linn-aktiivne" : undefined} onClick={() => setLinn("Tallinn")}>Tallinn</button>
@@ -17,7 +35,7 @@ function Esindused() {
 
     {linn === "Tallinn" &&
       <>
-      {esindusedJSON.map( esindus =>
+      {esindused.map( esindus =>
       <div key={esindus.keskus}>
         {esindus.keskus}
         <Link to={"/esindus/" + esindus.keskus}>

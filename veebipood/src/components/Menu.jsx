@@ -54,6 +54,10 @@ function Menu() {
       <Link to="/halda">
         <button>Mine arraysid muutma</button>
       </Link>
+      <Link to="/api-home">
+        <button>API otspunktid</button>
+      </Link>
+
     </div>
   )
 }

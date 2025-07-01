@@ -35,6 +35,13 @@ import YksKasutaja from "./pages/yks/YksKasutaja";
 import YksTootaja from "./pages/yks/YksTootaja";
 import YksToode from "./pages/yks/YksToode";
 import { useState } from "react";
+import ApiHome from "./pages/api/ApiHome";
+import Riigid from "./pages/api/Riigid";
+import Sonastik from "./pages/api/Sonastik";
+import Tarnija1 from "./pages/api/Tarnija1";
+import Tarnija2 from "./pages/api/Tarnija2";
+import Tarnija3 from "./pages/api/Tarnija3";
+import ApiAutod from "./pages/api/ApiAutod";
 
 
 function App() {
@@ -97,6 +104,14 @@ function App() {
         <Route path="/kasutaja" element={<YksKasutaja />} />
         <Route path="/tootaja/:persoon" element={<YksTootaja />} />
         <Route path="/toode/:produkt" element={<YksToode/>} />
+
+        <Route path="/api-home" element={<ApiHome/>} />
+        <Route path="/api-autod" element={<ApiAutod/>} />
+        <Route path="/riigid" element={<Riigid/>} />
+        <Route path="/sonastik" element={<Sonastik/>} />
+        <Route path="/tarnija1" element={<Tarnija1/>} />
+        <Route path="/tarnija2" element={<Tarnija2/>} />
+        <Route path="/tarnija3" element={<Tarnija3/>} />
         
         <Route path="/*" element={<NotFound />} />
       </Routes>

@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 function HaldaEsindused() {
   const [esindused, setEsindused] = useState(esindusedJSON.slice());
+  const [unikaalne, setUnikaalne] = useState(true);
+
   const esindusRef = useRef();
   const telefonRef = useRef();
   const aadressRef = useRef();
@@ -34,17 +36,29 @@ function HaldaEsindused() {
     setEsindused(esindusedJSON.slice());
   }
 
+  const kasUnikaalne = () => { 
+        const vastus = esindusedJSON.find(esindus => esindus.keskus === esindusRef.current.value);
+        
+        if(vastus === undefined){
+          setUnikaalne(true);
+          // korras
+        } else {
+          //veateade
+          setUnikaalne(false);
+        }
+      }
+
   return (
     <div>
       <HaldaHome />
-
-     <label>Esinduse nimi</label> <br />
-      <input ref={esindusRef} type="text"/> <br />
+      {unikaalne === false && <div className="red">Keskuse nimi peab olema unikaalne</div>}
+      <label>Esinduse nimi</label> <br />
+      <input onChange={kasUnikaalne} ref={esindusRef} type="text"/> <br />
       <label>Esinduse telefon</label><br />
       <input ref={telefonRef} type="text" /><br />
       <label>Esinduse aadress</label><br />
       <input ref={aadressRef} type="text" /><br />
-      <button onClick={lisa}>Sisesta</button> <br />
+      <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
 
      <div>Hindasid: {esindused.length} tk</div>
       <table>
