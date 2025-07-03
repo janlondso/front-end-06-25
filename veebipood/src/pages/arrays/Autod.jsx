@@ -52,10 +52,7 @@ function Autod() {
         setAutod(autod.slice());
     }
 
-    const reset = () => {
-        setAutod(andmed.slice());
-    }
-
+    
     const filtreeriSisaldabLyhenditER = () => {
         const vastus = andmed.filter(auto => auto.nimi.includes("er"));
         setAutod(vastus);
@@ -76,7 +73,7 @@ function Autod() {
         const vastus = andmed.filter(auto => auto.nimi[1] === "e");
         setAutod(vastus);
     }
-
+    
     const muudaSuurteksTahtedeks = () => {
         // const vastus = autod.map(auto => auto); <-- muudab koik samaks
         // const vastus = autod.map(auto => ({nimi: auto.nimi.toUpperCase(), hind: auto.hind, aktiivne: auto.aktiivne, pilt: auto.pilt}));
@@ -90,6 +87,9 @@ function Autod() {
     // .sort((a,b) =>) Pluss/Miinus--> koguse samaks, muudab jarjekorda
     // .filter(element =>) True/False --> kogus vaheneb
     // .map(element => )-->UUS_Väärtus kogus sama, aga muudab igayht
+        const reset = () => {
+            setAutod(andmed.slice());
+        }
 
         const lisaOstukorvi = (toode) => {
             // ostukorvFailist.push(toode);
@@ -126,7 +126,6 @@ function Autod() {
         <br /><br />
         <button onClick={muudaSuurteksTahtedeks}>Muuda kõikide autode nimed suurteks tähtedeks</button>
         <br /><br />
-        <button onClick={reset}>Reset</button>
 
         <div>Autode arv: {autod.length} tk</div>
         {autod.map(auto =>
