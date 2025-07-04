@@ -42,6 +42,8 @@ import Tarnija1 from "./pages/api/Tarnija1";
 import Tarnija2 from "./pages/api/Tarnija2";
 import Tarnija3 from "./pages/api/Tarnija3";
 import ApiAutod from "./pages/api/ApiAutod";
+import { ContactUs } from "./pages/ContactUs";
+import Kaart from "./pages/Kaart";
 
 
 function App() {
@@ -112,6 +114,11 @@ function App() {
         <Route path="/tarnija1" element={<Tarnija1/>} />
         <Route path="/tarnija2" element={<Tarnija2/>} />
         <Route path="/tarnija3" element={<Tarnija3/>} />
+        
+        <Route path="/email" element={<ContactUs/>} />
+        <Route path="/kaart" element={<Kaart/>} />
+
+
         
         <Route path="/*" element={<NotFound />} />
       </Routes>

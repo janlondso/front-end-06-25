@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import HaldaHome from "./HaldaHome"
 import andmed from '../../data/autod.json'
 import { Link } from "react-router-dom";
+import {Table} from 'react-bootstrap'
+
 
 function HaldaAutod() {
       const [autod, setAutod] = useState(andmed);
@@ -98,7 +100,8 @@ function HaldaAutod() {
         <input ref={aktiivneRef} type="checkbox"/> <br />
         <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
         <div>Autosid: {autod.length} tk</div>
-      <table>
+        
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Index</th>
@@ -124,7 +127,7 @@ function HaldaAutod() {
             </Link>
           </tr>)}
         </tbody>
-      </table>
+      </Table>
       </div>
     )
   }

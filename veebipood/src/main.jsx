@@ -4,6 +4,11 @@ import './index.css'
 import './i18n';
 import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'leaflet/dist/leaflet.css';
+
+
+
 
 // Navigeerimiseks ehk URL-i vahetuseks on vaja:
 // 1. installida node_modules kausta navigeerimiseks vajalikud koodijupid

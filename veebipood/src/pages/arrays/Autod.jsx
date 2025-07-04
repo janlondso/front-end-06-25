@@ -128,16 +128,18 @@ function Autod() {
         <br /><br />
 
         <div>Autode arv: {autod.length} tk</div>
-        {autod.map(auto =>
-            <div key={auto.nimi}>
-            <div>{auto.nimi}</div>
-            <div>{auto.hind} €</div>
-            <div><img className="pilt" src={auto.pilt} alt="" /></div>
-            <div>{auto.aktiivne ? <button onClick={() => lisaOstukorvi(auto)}>Lisa ostukorvi</button> : <i>Toode pole aktiivne</i>}</div>
-            <Link to={"/auto/" + auto.nimi}>
-                <button>Vaata lähemalt</button>
-            </Link>
+        <div className="autod">
+             {autod.map(auto =>
+            <div className="auto" key={auto.nimi}>
+                <div className="nimi">{auto.nimi}</div>
+                <div className="hind">{auto.hind} €</div>
+                <div><img className={auto.aktiivne ? "pilt" : "pilt-mitteaktiivne"} src={auto.pilt} alt="" /></div>
+                <div>{auto.aktiivne ? <button onClick={() => lisaOstukorvi(auto)}>Lisa ostukorvi</button> : <i className="mitteaktiivse-tekst">Toode pole aktiivne</i>}</div>
+                <Link to={"/auto/" + auto.nimi}>
+                    <button>Vaata lähemalt</button>
+                </Link>
             </div>)}
+        </div>
     </div>
   )
 }

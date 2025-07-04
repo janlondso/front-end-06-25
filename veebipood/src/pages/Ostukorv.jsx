@@ -1,6 +1,7 @@
 import { useState } from "react"
 // import ostukorvFailist from '../data/ostukorv.json'
 import { useTranslation } from "react-i18next";
+import deleteIcon from '../assets/trash.png'
 
 // renderdus - refresh või satutakse lehele ja kuvatakse esmakordselt välja HTML
 // re-renderdus - kui useState-i setteriga uuendatakse HTMLi
@@ -31,7 +32,8 @@ function Ostukorv() {
       {tooted.map((toode, index) =>
       <div key={index}>
         {toode.nimi} - {toode.hind} €
-        <button onClick={() => kustuta(index)}>x</button>
+        {/* <button onClick={() => kustuta(index)}>x</button> */}
+        <img className="icon" src={deleteIcon} onClick={() => kustuta(index)} alt="" />
         </div>)}
     </div>
   )

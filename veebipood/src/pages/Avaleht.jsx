@@ -1,6 +1,7 @@
 import { useState } from "react"
 import laigitud from "../assets/laigitud.svg";
 import mittelaigitud from "../assets/mittelaigitud.svg";
+import Karussell from "../components/Karussell";
 
 // rfce --> snippets. loob reactis komponendi
 
@@ -32,6 +33,7 @@ function Avaleht() {
   
   return (
     <div>
+      <Karussell />
       {like === true && <img onClick={() => setLike(false)} src={laigitud} alt="" />}
       {like === false && <img onClick={() => setLike(true)} src={mittelaigitud} alt="" />}
 

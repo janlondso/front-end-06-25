@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { useTranslation } from 'react-i18next';
-
+import {Link} from 'react-router-dom'
+import ukflag from '../assets/ukflag.png'
+import estflag from '../assets/estflag.png'
 
 function Menu() {
   const { t, i18n } = useTranslation();
-  // return <h1>{t('Welcome to React')}</h1>
 
-  const changeLanguageEN = () => {
+    const changeLanguageEN = () => {
     i18n.changeLanguage("en");
     localStorage.setItem("keel","en")
   }
@@ -16,50 +19,37 @@ function Menu() {
     localStorage.setItem("keel","et")
 
   }
-
   return (
-    <div>
-      <button onClick={changeLanguageEN}>English</button>
-      <button onClick={changeLanguageET}>Eesti</button>
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Veebipood</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/seaded">seaded</Nav.Link>
+            <Nav.Link as={Link} to="/ostukorv">{t("menu.cart")}</Nav.Link>
+            <Nav.Link as={Link} to="/osta-kinkekaart">Kinkekaardid</Nav.Link>
+            <Nav.Link as={Link} to="/kalkulaator">Kalkulaator</Nav.Link>
+           
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/api-home">APId</Nav.Link>
+            <Nav.Link as={Link} to="/halda">Haldamine</Nav.Link>
+            <Nav.Link as={Link} to="/arrays">Arrayd</Nav.Link>
+            <Nav.Link as={Link} to="/lisa-toode">Kodus: teha lisamine</Nav.Link>
+            <Nav.Link as={Link} to="/kaart">Kaart</Nav.Link>
+            <Nav.Link as={Link} to="/email">Email</Nav.Link>
+            {/* <button onClick={changeLanguageEN}>English</button>
+            <button onClick={changeLanguageET}>Eesti</button> */}
+            <img className='icon' src={ukflag} onClick={changeLanguageEN} alt="" />
+            <img className='icon' src={estflag} onClick={changeLanguageET} alt="" />
 
-        <Link to="/">
-         <img
-        className="pilt"
-        src="https://images.unsplash.com/photo-1726137570036-cc7e8b1b58c1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8"
-        alt=""
-      />
-      </Link>
-     
-      <Link to="/ostukorv">
-        <button>{t("menu.cart")}</button>
-      </Link>
 
-      <Link to="/lisa-toode">
-        <button>{t("menu.add-product")}</button>
-      </Link>
-      
-      <Link to="/osta-kinkekaart">
-        <button>{t("menu.giftcards")}</button>
-      </Link>
-      <Link to="/seaded">
-        <button>{t("menu.settings")}</button>
-      </Link>
-      <Link to="/kalkulaator">
-        <button>Kalkulaator</button>
-      </Link>
-
-      <Link to="/arrays">
-        <button>Array-d</button>
-      </Link>
-      <Link to="/halda">
-        <button>Mine arraysid muutma</button>
-      </Link>
-      <Link to="/api-home">
-        <button>API otspunktid</button>
-      </Link>
-
-    </div>
-  )
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Menu
+export default Menu;
