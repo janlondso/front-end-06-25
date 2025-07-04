@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next";
+
 
 function Cart() {
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const { t } = useTranslation(); // votan LocalStotag-st seejarel jutumargid maha
+
   
   const deleteItem = (index) => {
     products.splice(index, 1); 
@@ -17,7 +21,17 @@ function Cart() {
 
   return (
     <div className="cart">
-      {products.length > 0 ? <div>Ostukorvis on kokku: {products.length} toode(t)</div> : <div>Teie ostukorv on tühi</div>} <br />
+      {products.length > 0 ?
+        <>
+          <button onClick={() => setProducts([])}>{t("cart.empty-button")}</button>
+          <div>{t("cart.in-cart")} {products.length} {t("cart.item(s)")}</div>
+        </> : 
+        <div>{t("cart.empty-cart")}</div>
+        }
+      {/* {products.length > 0 ?
+      <div>Ostukorvis on kokku: {products.length} toode(t)</div>
+      : <div>Teie ostukorv on tühi</div>} 
+      <br /> */}
       {products.map((product, index) =>
         <div key={product.title}>
           <div>{product.title} - {product.price} €</div>

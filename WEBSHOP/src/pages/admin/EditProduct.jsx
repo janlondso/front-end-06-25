@@ -1,7 +1,9 @@
-
+import AdminHome from "./AdminHome"
 function EditProduct() {
   return (
-    <div>EditProduct</div>
+    <div>
+       <AdminHome />
+    </div>
   )
 }
 
