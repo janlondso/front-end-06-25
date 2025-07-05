@@ -17,11 +17,17 @@ function NavigationBar() {
   }
   return (
     <div className="NavigationBar">
-        <button onClick={changeLanguageEN}>English</button>
-        <button onClick={changeLanguageET}>Eesti</button>
         <Link to="/"><button>{t("navigationbar.home")}</button></Link>
         <Link to="/admin"><button>{t("navigationbar.admin")}</button></Link>
         <Link to="/cart"><button>{t("navigationbar.card")}</button></Link>
+        <button onClick={changeLanguageEN}>English</button>
+        <button onClick={changeLanguageET}>Eesti</button>
+        <Link to="/login">
+          <button>{t("navigationbar.login")}</button>
+        </Link>
+        <Link to="/signup">
+          <button>{t("navigationbar.signup")}</button>
+        </Link>
     </div>
   )
 }

@@ -10,7 +10,9 @@ const resources = {
         "navigationbar": {
         "home": "Home",
         "admin": "Admin",
-        "card": "Card"
+        "card": "Card",
+        "login": "Login",
+        "signup": "Signup"
       },
        "cart": {
         "empty-button": "Empty",
@@ -25,7 +27,9 @@ const resources = {
         "navigationbar": {
         "home": "Avaleht",
         "admin": "Admin",
-        "card": "Ostukorv"
+        "card": "Ostukorv",
+        "login": "Logi sisse",
+        "signup": "Registreeru"
       },
        "cart": {
         "empty-button": "Tühjenda",
