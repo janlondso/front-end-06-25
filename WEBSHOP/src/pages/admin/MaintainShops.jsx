@@ -1,7 +1,8 @@
+import AdminHome from "./AdminHome"
 
 function MaintainShops() {
   return (
-    <div>MaintainShops</div>
+    <div><AdminHome /></div>
   )
 }
 

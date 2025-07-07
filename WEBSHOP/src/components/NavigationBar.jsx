@@ -1,35 +1,46 @@
-import { Link } from "react-router-dom"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import ukflag from '../assets/ukflag.png'
+import estflag from '../assets/estflag.png'
 
 function NavigationBar() {
     const { t, i18n } = useTranslation();
 
     const changeLanguageEN = () => {
-    i18n.changeLanguage("en");
-    localStorage.setItem("keel","en")
-  }
+      i18n.changeLanguage("en");
+      localStorage.setItem("keel","en")
+    }
 
-  const changeLanguageET = () => {
-    i18n.changeLanguage("et");
-    localStorage.setItem("keel","et")
+    const changeLanguageET = () => {
+      i18n.changeLanguage("et");
+      localStorage.setItem("keel","et")
+    }
 
-  }
   return (
-    <div className="NavigationBar">
-        <Link to="/"><button>{t("navigationbar.home")}</button></Link>
-        <Link to="/admin"><button>{t("navigationbar.admin")}</button></Link>
-        <Link to="/cart"><button>{t("navigationbar.card")}</button></Link>
-        <button onClick={changeLanguageEN}>English</button>
-        <button onClick={changeLanguageET}>Eesti</button>
-        <Link to="/login">
-          <button>{t("navigationbar.login")}</button>
-        </Link>
-        <Link to="/signup">
-          <button>{t("navigationbar.signup")}</button>
-        </Link>
-    </div>
-  )
+    <Navbar sticky='top' collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/">WEBSHOP</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">{t("navigationbar.home")}</Nav.Link>
+            <Nav.Link as={Link} to="/admin">{t("navigationbar.admin")}</Nav.Link>
+            <Nav.Link as={Link} to="/cart">{t("navigationbar.card")}</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/contact">{t("navigationbar.contact")}</Nav.Link>
+            <Nav.Link as={Link} to="/login">{t("navigationbar.login")}</Nav.Link>
+            <Nav.Link as={Link} to="/signup">{t("navigationbar.signup")}</Nav.Link>
+            <img className='icon' src={ukflag} onClick={changeLanguageEN} alt="" />
+            <img className='icon' src={estflag} onClick={changeLanguageET} alt="" />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default NavigationBar
+export default NavigationBar;

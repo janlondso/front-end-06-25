@@ -3,6 +3,7 @@ import productsJSON from '../../data/products.json'
 import AdminHome from './AdminHome'
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import {Button, Table} from 'react-bootstrap'
 
 
 function MaintainProducts() {
@@ -21,11 +22,11 @@ function MaintainProducts() {
     }
   return (
     <div className='maintainProducts'>
+      <AdminHome />
       <label>Otsi nimi</label>
       <input ref={searchRef} type="text" />
-      <button onClick={searchTitle}>Search</button>
-      <AdminHome />
-      <table>
+      <Button onClick={searchTitle}>Search</Button>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>ID</th>
@@ -47,16 +48,18 @@ function MaintainProducts() {
           <td>{product.description}</td>
           <td>{product.category}</td>
           <td><img style={{width: "50px", borderRadius: "10px"}} src={product.image} alt="" /></td>
-          <td>{product.rating.count}</td>
-          <td>{product.rating.rate}</td>
-          <td><button onClick={ () => deleteItem(index)}>x</button></td>
-          <Link to={"/edit-product/" + index}>
-            <button>Muuda toodet</button>
-          </Link>
+          {/* <td>{product.rating.count}</td>
+          <td>{product.rating.rate}</td> */}
+          <td><Button className='btn-secondary' onClick={ () => deleteItem(index)}>x</Button></td>
+          <td> 
+            <Link to={"/admin/edit-product/" + index}>
+              <Button>Muuda toodet</Button>
+            </Link>
+          </td>
         </tr>
       )}
         </tbody>
-      </table>
+      </Table>
       <ToastContainer
         position="bottom-right"
         autoClose={4000}

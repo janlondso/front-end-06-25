@@ -1,7 +1,8 @@
+import AdminHome from "./AdminHome"
 
 function MaintainCategories() {
   return (
-    <div>MaintainCategories</div>
+    <div><AdminHome /></div>
   )
 }
 

@@ -12,29 +12,29 @@ function HaldaTootajad() {
   const ametRef = useRef();
   const telRef = useRef();
   
-  const lisa = () => {
-    if(nimiRef.current.value === ""){
-      alert("Tühja nimega ei saa sisestada!");
-      return;
-    }
-    if(ametRef.current.value === ""){
-      alert("Ametinimeta ei saa sisestada!");
-      return;
-    }
-    if(telRef.current.value === ""){
-      alert("Telefonita ei saa sisestada!");
-      return;
-    }
-    tootajadFailist.push({
-      "eesnimi": nimiRef.current.value,
-      "ametikoht": ametRef.current.value,
-      "tel": telRef.current.value
-    });
-    uuendaTootajad(tootajadFailist.slice());
-    nimiRef.current.value = "";
-    ametRef.current.value = "";
-    telRef.current.value = "";
-  }
+  // const lisa = () => {
+  //   if(nimiRef.current.value === ""){
+  //     alert("Tühja nimega ei saa sisestada!");
+  //     return;
+  //   }
+  //   if(ametRef.current.value === ""){
+  //     alert("Ametinimeta ei saa sisestada!");
+  //     return;
+  //   }
+  //   if(telRef.current.value === ""){
+  //     alert("Telefonita ei saa sisestada!");
+  //     return;
+  //   }
+  //   tootajadFailist.push({
+  //     "eesnimi": nimiRef.current.value,
+  //     "ametikoht": ametRef.current.value,
+  //     "tel": telRef.current.value
+  //   });
+  //   uuendaTootajad(tootajadFailist.slice());
+  //   nimiRef.current.value = "";
+  //   ametRef.current.value = "";
+  //   telRef.current.value = "";
+  // }
 
   const kustuta = (index) => {
     tootajadFailist.splice(index,1);
@@ -54,7 +54,7 @@ function HaldaTootajad() {
 
        <div>Töötajaid kokku: {tootajad.length}</div>
 
-      <button onClick={lisa}>Lisa uus</button> <br />
+      {/* <button onClick={lisa}>Lisa uus</button> <br /> */}
       
       <table>
         <thead>

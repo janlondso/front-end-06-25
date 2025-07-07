@@ -13,35 +13,35 @@ function HaldaTooted() {
   const aktiivneRef = useRef();
   const piltRef = useRef();
 
-  const lisa = () => {
-    if(nimiRef.current.value === ""){
-      alert("Tühja nimega ei saa sisestada!");
-      return;
-    }
+  // const lisa = () => {
+  //   if(nimiRef.current.value === ""){
+  //     alert("Tühja nimega ei saa sisestada!");
+  //     return;
+  //   }
 
-    if(hindRef.current.value === ""){
-      alert("Hinnata ei saa sisestada!");
-      return;
-    }
+  //   if(hindRef.current.value === ""){
+  //     alert("Hinnata ei saa sisestada!");
+  //     return;
+  //   }
 
-    if(piltRef.current.value === ""){
-      alert("Pildita ei saa sisestada!");
-      return;
-    }
+  //   if(piltRef.current.value === ""){
+  //     alert("Pildita ei saa sisestada!");
+  //     return;
+  //   }
 
-    tootedFailist.push({
-          "nimi": nimiRef.current.value,
-          "hind": hindRef.current.value,
-          "aktiivne": aktiivneRef.current.checked, // true voi false
-          "pilt": piltRef.current.value
-    });
+  //   tootedFailist.push({
+  //         "nimi": nimiRef.current.value,
+  //         "hind": hindRef.current.value,
+  //         "aktiivne": aktiivneRef.current.checked, // true voi false
+  //         "pilt": piltRef.current.value
+  //   });
 
-    uuendaTooted(tootedFailist.slice());
-        nimiRef.current.value = "";
-        hindRef.current.value = "";
-        aktiivneRef.current.value = false;
-        piltRef.current.value = "";
-  }
+  //   uuendaTooted(tootedFailist.slice());
+  //       nimiRef.current.value = "";
+  //       hindRef.current.value = "";
+  //       aktiivneRef.current.value = false;
+  //       piltRef.current.value = "";
+  // }
 
   const kustuta = (index) => {
         tootedFailist.splice(index,1);
@@ -75,7 +75,7 @@ function HaldaTooted() {
         <input ref={piltRef} type="text"/> <br />
         <label>Toode aktiivne</label> <br />
         <input ref={aktiivneRef} type="checkbox"/> <br />
-        <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
+        {/* <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br /> */}
         <div>Tooteid kokku: {tooted.length} tk</div>
         <br />
         <table>

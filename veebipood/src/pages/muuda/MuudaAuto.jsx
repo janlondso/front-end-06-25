@@ -34,7 +34,6 @@ function MuudaAuto() {
       "aktiivne": aktiivneRef.current.checked, // checkbox kas on linnutatud -> true
       "pilt": piltRef.current.value
     }
-
     navigate("/halda-autod");
   }
 

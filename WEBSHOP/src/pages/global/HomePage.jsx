@@ -2,6 +2,8 @@ import { useRef, useState } from "react"
 import productsFromFile from '../../data/products.json'
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import Button from '@mui/material/Button';
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 
 function HomePage() {
@@ -46,7 +48,13 @@ function HomePage() {
      const search = () => {
         const answer = productsFromFile.filter(product => product.category.includes(searchRef.current.value));
         setProducts(answer);
+        console.log(answer);
     }
+
+    // const otsi = () => {
+    //     const vastus = andmed.filter(auto => auto.nimi.includes(otsingRef.current.value));
+    //     setAutod(vastus);
+    // }
 
     // Add to card
   const addToCard = (item) => {
@@ -58,29 +66,30 @@ function HomePage() {
 
   return (
     <div className="homePage">
-       <button onClick={sortAtoZ}>Sortreeri A-Z</button>
-        <button onClick={sortZtoA}>Sortreeri Z-A</button>
-        <button onClick={sortPriceUp}>Hinnad suurenevalt</button>
-        <button onClick={sortPriceDown}>Hinnad kahanevalt</button>
-        <button onClick={topRate}>Rating kahanevalt</button>
-        <button onClick={lowestRate}>Rating tõusvalt</button> <br />
+        <ButtonGroup color="primary" variant="text" aria-label="Basic button group">
+          <Button onClick={sortAtoZ}>Sortreeri A-Z</Button>
+          <Button onClick={sortZtoA}>Sortreeri Z-A</Button>
+          <Button onClick={sortPriceUp}>Hinnad suurenevalt</Button>
+          <Button onClick={sortPriceDown}>Hinnad kahanevalt</Button>
+          <Button onClick={topRate}>Rating kahanevalt</Button>
+          <Button onClick={lowestRate}>Rating tõusvalt</Button>
+        </ButtonGroup>
+        <br /><br />
         <label>Otsi toodet</label> <br />
-        <input ref={searchRef} type="text" /><br />
-        <button onClick={search}>Search</button>
+        <input ref={searchRef} onChange={search} type="text" /><br /><br />
       <div>Tooteid kokku {products.length}</div>
-      {products.map(product =>
-        <div key={product.id}>
-          <div>
-            <img style={{width:"100px"}} src={product.image} alt="" />
+      <div className="products">
+        {products.map(product =>
+          <div className="product" key={product.id}>
+                <div className="image-container"><img className="product-image" src={product.image} alt="" /></div>
+                <div className="title-container">{product.title}</div>
+                <div className="title-container">{product.category}</div>
+                <div>{product.price} €</div>
+                <div><Button variant="contained" onClick={() => addToCard(product)}>Lisa toode ostukorvi</Button></div>
+                <div><Link to={"/product/" + product.title}><Button variant="outlined">Vaata lähemalt</Button></Link></div>
           </div>
-          <div>{product.title}</div>
-          <div>{product.price} €</div>
-          <button onClick={() => addToCard(product)}>Lisa toode ostukorvi</button>
-          <Link to={"/product/" + product.title}>
-            <button>Vaata lähemalt</button>
-          </Link>
-        </div>
-      )}
+        )}
+      </div>
        <ToastContainer
         position="bottom-right"
         autoClose={4000}

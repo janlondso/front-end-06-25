@@ -13,23 +13,23 @@ function HaldaEsindused() {
   const telefonRef = useRef();
   const aadressRef = useRef();
  
-  const lisa = () => {
-        if(esindusRef.current.value === ""){
-          alert("Tühja nimega ei saa lisada!")
-          return;
-        }
+  // const lisa = () => {
+  //       if(esindusRef.current.value === ""){
+  //         alert("Tühja nimega ei saa lisada!")
+  //         return;
+  //       }
 
-        esindusedJSON.push({ 
-          "keskus": esindusRef.current.value,
-          "tel": telefonRef.current.value,
-          "aadress": aadressRef.current.value
-        });
-        setEsindused(esindusedJSON.slice());
-        // alumised read teevad vormi inputit tyhjaks
-        esindusRef.current.value = "";
-        telefonRef.current.value = "";
-        aadressRef.current.value = "";
-  }
+  //       esindusedJSON.push({ 
+  //         "keskus": esindusRef.current.value,
+  //         "tel": telefonRef.current.value,
+  //         "aadress": aadressRef.current.value
+  //       });
+  //       setEsindused(esindusedJSON.slice());
+  //       // alumised read teevad vormi inputit tyhjaks
+  //       esindusRef.current.value = "";
+  //       telefonRef.current.value = "";
+  //       aadressRef.current.value = "";
+  // }
 
   const kustuta = (index) => {
     esindusedJSON.splice(index,1);
@@ -58,7 +58,7 @@ function HaldaEsindused() {
       <input ref={telefonRef} type="text" /><br />
       <label>Esinduse aadress</label><br />
       <input ref={aadressRef} type="text" /><br />
-      <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
+      {/* <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br /> */}
 
      <div>Hindasid: {esindused.length} tk</div>
       <table>

@@ -41,17 +41,58 @@
   color: #888;
 } */
 
+/* homePage css */
+.homePage {
+  margin-top: 40px;
+  padding: 32px;
+}
+
+/* Home Page css */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 32px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+}
+
+.product .image-container,
+.product .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product .image-container {
+  width: 120px;
+  height: 80px;
+  margin: 10px 0;
+
+}
+
+.product-image {
+  width: 50%;
+}
+
 /******************  notFound page *************************/
 .notFound {
-    padding: 32px;
-    max-width: 500px;
-    margin: 80px auto;
-    background-color: black;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    border: 10px solid #333;
-    border-radius: 11px;
+  padding: 32px;
+  max-width: 500px;
+  margin: 80px auto;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border: 10px solid #333;
+  border-radius: 11px;
 }
 .notFound h3 {
   font-size: 24px;
@@ -79,7 +120,8 @@
   max-width: 400px;
   margin: 40px auto;
   padding: 16px;
-  background-color: aliceblue;
+  border: 1px solid lightgrey;
+  border-radius: 11px;
 }
 .singleProduct div {
   padding: 8px;
@@ -88,4 +130,28 @@
 .image-single-product {
   width: 200px;
   border-radius: 11px;
+}
+
+/* Icon css */
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 8px;
+  cursor: pointer;
+}
+/* Contact Us css */
+.contactUs {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 32px;
+}
+
+.contactUs form {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

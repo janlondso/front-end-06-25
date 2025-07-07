@@ -36,6 +36,7 @@ function App() {
         <Route path='admin/maintain-categories' element={ <MaintainCategories />} />
         <Route path='admin/maintain-shops' element={ <MaintainShops />} />
 
+
         <Route path='login' element={ <Login />} />
         <Route path='signup' element={ <Signup />} />
 

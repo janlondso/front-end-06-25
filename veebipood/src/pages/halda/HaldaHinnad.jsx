@@ -11,21 +11,21 @@ function HaldaHinnad() {
       const hindRef = useRef();
       const sonaRef = useRef();
 
-      const lisa = () => {
+      // const lisa = () => {
 
-        if (hindRef.current.value <= 0){
-          alert("Hind peab olema positiivne!");
-          return;
-        }
+      //   if (hindRef.current.value <= 0){
+      //     alert("Hind peab olema positiivne!");
+      //     return;
+      //   }
 
-        hinnadFailist.push({
-          "number": hindRef.current.value,
-          "sonana": sonaRef.current.value
-        });
-        setHinnad(hinnadFailist.slice()); 
-        hindRef.current.value = "";
-        sonaRef.current.value = "";
-      }
+      //   hinnadFailist.push({
+      //     "number": hindRef.current.value,
+      //     "sonana": sonaRef.current.value
+      //   });
+      //   setHinnad(hinnadFailist.slice()); 
+      //   hindRef.current.value = "";
+      //   sonaRef.current.value = "";
+      // }
 
        const kustuta = (index) => {
         hinnadFailist.splice(index, 1); // esimene nr mitmendat, teine mitu tk kustutada
@@ -40,7 +40,7 @@ function HaldaHinnad() {
       <input ref={hindRef} type="number"/> <br />
       <label>Sonana</label><br />
       <input ref={sonaRef} type="text" /><br />
-      <button onClick={lisa}>Sisesta</button> <br />
+      {/* <button onClick={lisa}>Sisesta</button> <br /> */}
       {/* <button onClick = {() => kustuta(0)}>Kustuta esimene</button>
       <button onClick = {() => kustuta(1)}>Kustuta teine</button>
       <button onClick = {() => kustuta(2)}>Kustuta kolmas</button>

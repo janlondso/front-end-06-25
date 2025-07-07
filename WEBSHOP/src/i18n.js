@@ -10,6 +10,7 @@ const resources = {
         "navigationbar": {
         "home": "Home",
         "admin": "Admin",
+        "contact": "Contact Us",
         "card": "Card",
         "login": "Login",
         "signup": "Signup"
@@ -19,6 +20,13 @@ const resources = {
         "in-cart": "There is",
         "item(s)": "Item(s)",
         "empty-cart": "Cart is empty"
+      },
+      "adminhome": {
+        "maintain-products": "Maintain products",
+        "editproducts": "Edit products",
+        "addproducts": "Add product",
+        "maintainshops": "Maintain shops",
+        "maintaincategories": "Maintain categories"
       }
     }
   },
@@ -28,6 +36,7 @@ const resources = {
         "home": "Avaleht",
         "admin": "Admin",
         "card": "Ostukorv",
+        "contact": "Kontakt",
         "login": "Logi sisse",
         "signup": "Registreeru"
       },
@@ -36,6 +45,13 @@ const resources = {
         "in-cart": "Ostukorvis on",
         "item(s)": "Ese(t)",
         "empty-cart": "Ostukorv on tühi"
+      },
+       "adminhome": {
+        "maintain-products": "Halda tooteid",
+        "editproducts": "Muuda tooteid",
+        "addproducts": "Lisa toode",
+        "maintainshops": "Halda poode",
+        "maintaincategories": "Halda tootegruppe"
       }
     }
   }

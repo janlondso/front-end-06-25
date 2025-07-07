@@ -13,35 +13,35 @@ function HaldaAutod() {
       const aktiivneRef = useRef();
       const piltRef = useRef();
 
-      const lisa = () => {
-        if(nimiRef.current.value  === ""){
-          alert("Tuhja nimega ei saa sisestada!");
-          return;
-        }
+      // const lisa = () => {
+      //   if(nimiRef.current.value  === ""){
+      //     alert("Tuhja nimega ei saa sisestada!");
+      //     return;
+      //   }
       
-        if(hindRef.current.value  === ""){
-          alert("Tuhja hind ei saa sisestada!");
-          return;
-        }
+      //   if(hindRef.current.value  === ""){
+      //     alert("Tuhja hind ei saa sisestada!");
+      //     return;
+      //   }
      
-        if(piltRef.current.value  === ""){
-          alert("Tuhja pildita ei saa sisestada!");
-          return;
-        }
+      //   if(piltRef.current.value  === ""){
+      //     alert("Tuhja pildita ei saa sisestada!");
+      //     return;
+      //   }
 
-        andmed.push({
-          "nimi": nimiRef.current.value,
-          "hind": hindRef.current.value,
-          "aktiivne": aktiivneRef.current.checked, // true voi false
-          "pilt": piltRef.current.value
-        }
-      );
-        setAutod(andmed.slice());
-        nimiRef.current.value = "";
-        hindRef.current.value = "";
-        aktiivneRef.current.value = false;
-        piltRef.current.value = "";
-      }
+      //   andmed.push({
+      //     "nimi": nimiRef.current.value,
+      //     "hind": hindRef.current.value,
+      //     "aktiivne": aktiivneRef.current.checked, // true voi false
+      //     "pilt": piltRef.current.value
+      //   }
+      // );
+      //   setAutod(andmed.slice());
+      //   nimiRef.current.value = "";
+      //   hindRef.current.value = "";
+      //   aktiivneRef.current.value = false;
+      //   piltRef.current.value = "";
+      // }
 
       const kustutaEsimene = () => {
         andmed.splice(0, 1); // esimene nr mitmendat, teine mitu tk kustutada
@@ -98,7 +98,7 @@ function HaldaAutod() {
         <input ref={piltRef} type="text"/> <br />
         <label>Auto aktiivne</label> <br />
         <input ref={aktiivneRef} type="checkbox"/> <br />
-        <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br />
+        {/* <button disabled={unikaalne === false} onClick={lisa}>Sisesta</button> <br /> */}
         <div>Autosid: {autod.length} tk</div>
         
       <Table striped bordered hover>
