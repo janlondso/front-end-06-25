@@ -1,5 +1,7 @@
+import Button from "@mui/material/Button";
 import { useState } from "react"
 import { useTranslation } from "react-i18next";
+import trash from '../../assets/trash.png'
 
 
 function Cart() {
@@ -23,7 +25,7 @@ function Cart() {
     <div className="cart">
       {products.length > 0 ?
         <>
-          <button onClick={() => setProducts([])}>{t("cart.empty-button")}</button>
+          <Button onClick={() => setProducts([])}>{t("cart.empty-button")}</Button>
           <div>{t("cart.in-cart")} {products.length} {t("cart.item(s)")}</div>
         </> : 
         <div>{t("cart.empty-cart")}</div>
@@ -35,11 +37,11 @@ function Cart() {
       {products.map((product, index) =>
         <div key={product.title}>
           <div>{product.title} - {product.price} €</div>
-          <button onClick={() => deleteItem(index)}>x</button>
+          <img className='icon' src={trash} onClick={() => deleteItem(index) } alt="" />
         </div>)}
       <br /> <br />
       <div>Summa kokku {totalSum()}</div>
-      <button>Alusta makset</button>
+      <Button variant="contained">Alusta makset</Button>
       {/* <button onClick={reset}>Tühjenda</button> */}
     </div>
   );

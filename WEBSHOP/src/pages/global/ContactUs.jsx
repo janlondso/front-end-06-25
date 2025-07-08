@@ -26,17 +26,17 @@ const ContactUs = () => {
 
   return (
     <div className='contactUs'>
-    <form ref={form} onSubmit={sendEmail}>
-       <TextField name="title" label="Title" variant="outlined" />
-      
-       <TextField name="from_name" label="Name" variant="outlined" />
+      <form ref={form} onSubmit={sendEmail}>
+        <TextField name="title" label="Title" variant="outlined" />
         
-      <TextField name="from_email" label="Email" variant="outlined" />
+        <TextField name="from_name" label="Name" variant="outlined" />
+          
+        <TextField name="from_email" label="Email" variant="outlined" />
+          
+        <TextField name="message" label="Message" variant="outlined" />
         
-      <TextField name="message" label="Message" variant="outlined" />
-      
-      <Button type="submit" variant="contained">Send</Button>
-    </form>
+        <Button type="submit" variant="contained">Send</Button>
+      </form>
     </div>
   );
 };

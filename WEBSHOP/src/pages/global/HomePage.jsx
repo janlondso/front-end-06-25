@@ -10,53 +10,44 @@ function HomePage() {
   const [products, setProducts] = useState(productsFromFile.slice());
   const searchRef = useRef();
 
-    // A to Z
+// A to Z
    const sortAtoZ = () => {
         products.sort((a,b) => a.title.localeCompare(b.title)); // tahestiku jargi
         setProducts(products.slice());
     }
-    // Z to A
+// Z to A
     const sortZtoA = () => {
         products.sort((a,b) => b.title.localeCompare(a.title)); // tahestiku jargi tagurpidi
         setProducts(products.slice());
     }
-    // Price up
+// Price up
     const sortPriceUp = () => {
       products.sort((a,b) => a.price - b.price);
       setProducts(products.slice());
     }
-
-    // Price down
+// Price down
     const sortPriceDown = () => {
       products.sort((a,b) => b.price - a.price);
       setProducts(products.slice());
     }
-
-    // Top rating
+// Top rating
     const topRate = () => {
       products.sort((a,b) => b.rating.rate - a.rating.rate);
       setProducts(products.slice());
     }
-
-    // Lowest rating
+// Lowest rating
     const lowestRate = () => {
       products.sort((a,b) => a.rating.rate - b.rating.rate);
       setProducts(products.slice());
     }
 
-    // Search product category
+// Search product category
      const search = () => {
         const answer = productsFromFile.filter(product => product.category.includes(searchRef.current.value));
         setProducts(answer);
         console.log(answer);
     }
-
-    // const otsi = () => {
-    //     const vastus = andmed.filter(auto => auto.nimi.includes(otsingRef.current.value));
-    //     setAutod(vastus);
-    // }
-
-    // Add to card
+ // Add to card
   const addToCard = (item) => {
     const localBasket = JSON.parse(localStorage.getItem("cart")) || [];
     localBasket.push(item);

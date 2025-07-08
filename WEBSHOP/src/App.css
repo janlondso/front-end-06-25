@@ -137,7 +137,14 @@
   width: 30px;
   height: 30px;
   margin: 8px;
+}
+
+.icon:hover {
+  opacity: 70%;
   cursor: pointer;
+}
+.icon:active {
+  padding: 1px;
 }
 /* Contact Us css */
 .contactUs {
@@ -154,4 +161,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Cart css */
+.cart {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* Login css */
+.login {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* SignUp */
+.signup {
+  max-width: 600px;
+  margin: 40px auto;
 }
