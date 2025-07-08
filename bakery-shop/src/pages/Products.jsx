@@ -30,6 +30,7 @@ function Products() {
     setProducts(products.slice());
   }
 
+
   return (<div>
     <div className="container">
       <h2 className="mb-4">Products</h2>
@@ -46,10 +47,10 @@ function Products() {
         {/* TODO: Order the products by price */}
         {products.map(product => 
             <tr key={product.name + product.price}>
-              <td>{product.name}</td>
+              <td><b>{product.name}</b></td>
               <td>{product.price}</td>
               {/*  TODO: Display the quantity in red if it is lower than 3 */}
-              <td>{product.quantity}</td> 
+              {product.quantity >= 3 ? <td>{product.quantity}</td> : <td className="red">{product.quantity}</td>}
               <td>{product.store}</td>
             </tr>
           )}
