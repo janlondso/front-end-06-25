@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import productsJSON from '../../data/products.json';
 import { Link } from "react-router-dom";
 import {Table} from 'react-bootstrap'
-import AdminHome from "./AdminHome";
+import AdminHome from "./AdminHome.tsx";
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -11,16 +11,25 @@ import { ToastContainer, toast } from 'react-toastify';
 function AddProduct() {
       const [products, setProducts] = useState(productsJSON);
       const [unique, setUnique] = useState(true);
-      const idRef = useRef();
-      const titleRef = useRef();
-      const priceRef = useRef();
-      const descriptionRef = useRef();
-      const categoryRef = useRef();
-      const imageRef = useRef();
-      const ratingRateRef = useRef();
-      const ratingCountRef = useRef();
+
+      const idRef = useRef<HTMLInputElement>(null);
+      const titleRef = useRef<HTMLInputElement>(null);
+      const priceRef = useRef<HTMLInputElement>(null);
+      const descriptionRef = useRef<HTMLInputElement>(null);
+      const categoryRef = useRef<HTMLInputElement>(null);
+      const imageRef = useRef<HTMLInputElement>(null);
+      const ratingRateRef = useRef<HTMLInputElement>(null);
+      const ratingCountRef = useRef<HTMLInputElement>(null);
 
       const addProduct = () => {
+        if(idRef.current === null || titleRef.current === null ||
+          priceRef.current === null || descriptionRef.current === null ||
+          categoryRef.current === null || imageRef.current === null ||
+          ratingCountRef.current === null || ratingRateRef.current === null
+        ) {
+          return;
+        }
+
         if(idRef.current.value  === ""){
           toast.error("Sisesta ID number");
           return;
@@ -57,15 +66,15 @@ function AddProduct() {
         }
 
         productsJSON.push({
-          "id": idRef.current.value,
+          "id": Number(idRef.current.value),
           "title": titleRef.current.value,
-          "price": priceRef.current.value,
+          "price": Number(priceRef.current.value),
           "description": descriptionRef.current.value,
           "category": categoryRef.current.value,
           "image": imageRef.current.value,
           "rating": {
-            "rate": ratingCountRef.current.value,
-            "count": ratingCountRef.current.value
+            "rate": Number(ratingCountRef.current.value),
+            "count": Number(ratingCountRef.current.value)
       }}
     );
 
@@ -80,13 +89,18 @@ function AddProduct() {
           ratingCountRef.current.value = "";
       }
 
-      const deleteProduct = (index) => {
-        productsJSON.splice(index,1);
-        setProducts(productsJSON.slice());
-      }
+      // const deleteProduct = (index) => {
+      //   productsJSON.splice(index,1);
+      //   setProducts(productsJSON.slice());
+      // }
 
       const isUnique = () => { 
-        const answer = productsJSON.find(product => product.title === titleRef.current.value);
+        const titleValue = titleRef.current;
+        if (titleValue === null) {
+          return;
+        }
+
+        const answer = productsJSON.find(product => product.title === titleValue.value);
         if(answer === undefined){
           setUnique(true);
         } else {
@@ -144,7 +158,7 @@ function AddProduct() {
             <td><img style={{width:"50px", borderRadius: "10px"}} className="pilt" src={product.image} alt="" /></td>
             <td>{product.rating.count}</td>
             <td>{product.rating.rate}</td>
-            <td><button onClick={ () => deleteProduct(index)}>x</button></td>
+            {/* <td><button onClick={ () => deleteProduct(index)}>x</button></td> */}
             <td><Link to={"/muuda-auto/" + index}>
               <button>Muuda</button>
             </Link>

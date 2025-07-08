@@ -1,14 +1,15 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import productsFromFile from '../../data/products.json'
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import ButtonGroup from "@mui/material/ButtonGroup";
+import type { Product } from "../../models/Product";
 
 
 function HomePage() {
   const [products, setProducts] = useState(productsFromFile.slice());
-  const searchRef = useRef();
+  // const searchRef = useRef<HTMLInputElement>(null);
 
 // A to Z
    const sortAtoZ = () => {
@@ -42,14 +43,13 @@ function HomePage() {
     }
 
 // Search product category
-     const search = () => {
-        const answer = productsFromFile.filter(product => product.category.includes(searchRef.current.value));
+     const filterByCategory = (categoryClicked: string) => {
+        const answer = productsFromFile.filter(product => product.category === categoryClicked);
         setProducts(answer);
-        console.log(answer);
     }
  // Add to card
-  const addToCard = (item) => {
-    const localBasket = JSON.parse(localStorage.getItem("cart")) || [];
+  const addToCart = (item: Product) => {
+    const localBasket = JSON.parse(localStorage.getItem("cart") || "[]");
     localBasket.push(item);
     localStorage.setItem("cart", JSON.stringify(localBasket));
     toast.success("Item added to your card!");
@@ -66,9 +66,14 @@ function HomePage() {
           <Button onClick={lowestRate}>Rating tõusvalt</Button>
         </ButtonGroup>
         <br /><br />
-        <label>Otsi toodet</label> <br />
-        <input ref={searchRef} onChange={search} type="text" /><br /><br />
+        <ButtonGroup>
+          <Button onClick={() => filterByCategory("men's clothing")}>Meeste rõivad</Button>
+          <Button onClick={() => filterByCategory("jewelery")}>Juveelid</Button>
+          <Button onClick={() => filterByCategory("electronics")}>Elektroonika</Button>
+          <Button onClick={() => filterByCategory("women's clothing")}>Naiste rõivad</Button>
+        </ButtonGroup>
       <div>Tooteid kokku {products.length}</div>
+      <br />
       <div className="products">
         {products.map(product =>
           <div className="product" key={product.id}>
@@ -76,8 +81,8 @@ function HomePage() {
                 <div className="title-container">{product.title}</div>
                 <div className="title-container">{product.category}</div>
                 <div>{product.price} €</div>
-                <div><Button variant="contained" onClick={() => addToCard(product)}>Lisa toode ostukorvi</Button></div>
-                <div><Link to={"/product/" + product.title}><Button variant="outlined">Vaata lähemalt</Button></Link></div>
+                <div><Button variant="contained" onClick={() => addToCart(product)}>Lisa toode ostukorvi</Button></div>
+                <div><Link to={"/product/" + product.id}><Button variant="outlined">Vaata lähemalt</Button></Link></div>
           </div>
         )}
       </div>
@@ -91,3 +96,5 @@ function HomePage() {
 }
 
 export default HomePage
+
+// https://mt-react-fake-store-web-app.netlify.app/

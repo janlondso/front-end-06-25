@@ -34,6 +34,7 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/contact">{t("navigationbar.contact")}</Nav.Link>
             <Nav.Link as={Link} to="/login">{t("navigationbar.login")}</Nav.Link>
             <Nav.Link as={Link} to="/signup">{t("navigationbar.signup")}</Nav.Link>
+            <Nav.Link as={Link} to="/map">{t("navigationbar.map")}</Nav.Link>
             <img className='icon' src={ukflag} onClick={changeLanguageEN} alt="" />
             <img className='icon' src={estflag} onClick={changeLanguageET} alt="" />
           </Nav>

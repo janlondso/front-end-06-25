@@ -8,16 +8,23 @@ import {Button, Table} from 'react-bootstrap'
 
 function MaintainProducts() {
   const [products, setProducts] = useState(productsJSON);
-  const searchRef = useRef();
+  const searchRef = useRef<HTMLInputElement>(null);
       // Delete item
-  const deleteItem = (index) => {
+  const deleteItem = (index: number) => {
         productsJSON.splice(index,1);
         setProducts(productsJSON.slice());
         toast.success("Item deleted!")
       }
       // Search title
      const searchTitle = () => {
-        const answer = productsJSON.filter(product => product.title.includes(searchRef.current.value));
+      // Typescript
+      const inputValue = searchRef.current;
+      if(inputValue === null){
+        return;
+      }
+
+        const answer = productsJSON.filter(product =>
+          product.title.includes(inputValue.value.toLowerCase()));
         setProducts(answer);
     }
   return (

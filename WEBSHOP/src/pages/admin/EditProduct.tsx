@@ -4,21 +4,34 @@ import productsJSON from '../../data/products.json';
 import { useNavigate, useParams } from "react-router-dom";
 
 
+
 function EditProduct() {
-      const { index } = useParams();
+      const { index } = useParams<{index: string}>();
+      if (index === undefined) {
+        return <div>Index on puudu...</div>
+      }
         // const found = productsJSON.find(product => product.title === index);
-      const found = productsJSON[index];      
+      const found = productsJSON[Number(index)];      
       const navigate = useNavigate();
-      const idNumberRef = useRef();
-      const titleRef = useRef();
-      const priceRef = useRef();
-      const descriptionRef = useRef();
-      const categoryRef = useRef();
-      const imageRef = useRef();
-      // const ratingRateRef = useRef();
-      // const ratingCountRef = useRef();
+
+      const idNumberRef = useRef<HTMLInputElement>(null);
+      const titleRef = useRef<HTMLInputElement>(null);
+      const priceRef = useRef<HTMLInputElement>(null);
+      const descriptionRef = useRef<HTMLInputElement>(null);
+      const categoryRef = useRef<HTMLInputElement>(null);
+      const imageRef = useRef<HTMLInputElement>(null);
+      const ratingRateRef = useRef<HTMLInputElement>(null);
+      const ratingCountRef = useRef<HTMLInputElement>(null);
 
       const changeProduct = () => {
+        if(idNumberRef.current === null || titleRef.current === null ||
+          priceRef.current === null || descriptionRef.current === null ||
+          categoryRef.current === null || imageRef.current === null ||
+          ratingCountRef.current === null || ratingRateRef.current === null
+        ) {
+          return;
+        }
+
         if(idNumberRef.current.value  === ""){
           alert("Sisesta ID number");
           return;
@@ -45,28 +58,32 @@ function EditProduct() {
           alert("Sisesta pildi URL");
           return;
         }
-        // if(ratingCountRef.current.value  === ""){
-        //   alert("Sisesta hinnangute arv");
-        //   return;
-        // }
-        // if(ratingRateRef.current.value  === ""){
-        //   alert("Sisesta hinnangu tase ");
-        //   return;
-        // }
+        if(ratingCountRef.current.value  === ""){
+          alert("Sisesta hinnangute arv");
+          return;
+        }
+        if(ratingRateRef.current.value  === ""){
+          alert("Sisesta hinnangu tase ");
+          return;
+        }
 
-        productsJSON[index] = {
-          "id": idNumberRef.current.value,
+        productsJSON[Number(index)] = {
+          "id": Number(idNumberRef.current.value),
           "title": titleRef.current.value,
-          "price": priceRef.current.value,
+          "price": Number(priceRef.current.value),
           "description": descriptionRef.current.value,
           "category": categoryRef.current.value,
           "image": imageRef.current.value,
-          // "rating": {
-          //   "rate": ratingCountRef.current.value,
-          //   "count": ratingCountRef.current.value
-          // }
+          "rating": {
+            "rate": Number(ratingCountRef.current.value),
+            "count": Number(ratingCountRef.current.value)
+          }
         }
         navigate("/admin/maintain-products/");
+      }
+
+      if (found === undefined) {
+        return  <div>Ei leitud</div>;
       }
 
   return (
@@ -84,10 +101,10 @@ function EditProduct() {
         <input ref={categoryRef} defaultValue={found?.category ||''} type="text" /><br />
         <label>Add Image url</label><br />
         <input ref={imageRef} defaultValue={found?.image ||''} type="text" /><br />
-        {/* <label>Rating count</label><br />
-        <input ref={ratingCountRef} defaultValue={found?.raiting.count || ''} type="number" /><br />
+        <label>Rating count</label><br />
+        <input ref={ratingCountRef} defaultValue={found?.rating.count || ''} type="number" /><br />
         <label>Rating rate</label><br />
-        <input ref={ratingRateRef} defaultValue={found?.raiting.rate ||''} type="number" /><br /> */}
+        <input ref={ratingRateRef} defaultValue={found?.rating.rate ||''} type="number" /><br />
         <button onClick={changeProduct}>Muuda toode</button>
       </div>
     )

@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import NavigationBar from './components/NavigationBar'
 import HomePage from './pages/global/HomePage'
-import ContactUs from './pages/global/ContactUs'
 import Shops from './pages/global/Shops'
 import Cart from './pages/global/Cart'
 import SingleProduct from './pages/global/SingleProduct'
@@ -15,6 +14,8 @@ import MaintainShops from './pages/admin/MaintainShops'
 import NotFound from './pages/global/NotFound'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
+import ContactUs from './pages/global/ContactUs'
+import Map from './pages/global/Map'
 
 function App() {
   return (
@@ -27,19 +28,16 @@ function App() {
         <Route path='contact' element={ <ContactUs />} />
         <Route path='shops' element={ <Shops />} />
         <Route path='cart' element={ <Cart />} />
-        <Route path='product/:index' element={ <SingleProduct />} />
-
+        <Route path='product/:id' element={ <SingleProduct />} />
+        <Route path='map' element={ <Map />} />
         <Route path='admin' element={ <AdminHome />} />
         <Route path='admin/add-product' element={ <AddProduct />} />
         <Route path='admin/edit-product/:index' element={ <EditProduct/>} />
         <Route path='admin/maintain-products' element={ <MaintainProducts />} />
         <Route path='admin/maintain-categories' element={ <MaintainCategories />} />
         <Route path='admin/maintain-shops' element={ <MaintainShops />} />
-
-
         <Route path='login' element={ <Login />} />
         <Route path='signup' element={ <Signup />} />
-
         <Route path='*' element={ <NotFound />} />
       </Routes>
     </div>

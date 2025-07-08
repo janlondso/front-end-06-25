@@ -13,7 +13,8 @@ const resources = {
         "contact": "Contact Us",
         "card": "Card",
         "login": "Login",
-        "signup": "Signup"
+        "signup": "Signup",
+        "map": "Map"
       },
        "cart": {
         "empty-button": "Empty",
@@ -38,7 +39,8 @@ const resources = {
         "card": "Ostukorv",
         "contact": "Kontakt",
         "login": "Logi sisse",
-        "signup": "Registreeru"
+        "signup": "Registreeru",
+        "map": "Kaart"
       },
        "cart": {
         "empty-button": "Tühjenda",

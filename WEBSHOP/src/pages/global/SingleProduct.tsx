@@ -3,8 +3,8 @@ import productsFromFile from '../../data/products.json'
 
 
 function SingleProduct() {
-  const { index } = useParams();
-  const found = productsFromFile.find(product => product.title === index);
+  const { id } = useParams();
+  const found = productsFromFile.find(product => product.id === Number(id));
   
   if(!found) {
     return <div>No products found</div>
