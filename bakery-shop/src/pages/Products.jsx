@@ -30,10 +30,15 @@ function Products() {
     setProducts(products.slice());
   }
 
+  const sortLowestToHigh = () => {
+    products.sort((a,b) => a.price - b.price);
+    setProducts(products.slice());
+  }
 
   return (<div>
     <div className="container">
       <h2 className="mb-4">Products</h2>
+      <button onClick={sortLowestToHigh}>Sort lowest to highest</button>
       <Table className="table table-hover table-bordered">
         <thead>
         <tr>
