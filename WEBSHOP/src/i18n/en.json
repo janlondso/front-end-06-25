@@ -17,9 +17,25 @@
       },
       "adminhome": {
         "maintain-products": "Maintain products",
-        "editproducts": "Edit products",
-        "addproducts": "Add product",
-        "maintainshops": "Maintain shops",
-        "maintaincategories": "Maintain categories"
+        "add-products": "Add product",
+        "maintain-shops": "Maintain shops",
+        "maintain-categories": "Maintain categories"
+      },
+      "addproduct": {
+        "unique-product": "Product name must to be unique",
+        "id": "Product ID",
+        "title": "Product title",
+        "price": "Price",
+        "description": "Description",
+        "category": "Category",
+        "add-image": "Add image",
+        "rating-count": "Rating count",
+        "rating-rate": "Rating rate",
+        "add": "Add product",
+        "products-total": "Products total",
+        "product-pcs": "pcs"
+      },
+      "maintainproducts": {
+        "find-name": "Find name"
       }
     }

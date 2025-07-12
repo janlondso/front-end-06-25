@@ -1,9 +1,8 @@
 import { useRef } from "react"
 import AdminHome from "./AdminHome"
+import { Button } from "react-bootstrap";
 
 function MaintainShops() {
-
-
   const nameRef = useRef<HTMLInputElement>(null);
   const latitudeRef = useRef<HTMLInputElement>(null);
   const longitudeRef = useRef<HTMLInputElement>(null);
@@ -14,15 +13,15 @@ function MaintainShops() {
   return (
     <div>
       <AdminHome />
-      <label>Name</label>
-      <input ref={nameRef} type="text" />
-      <label>Latitude</label>
-      <input ref={latitudeRef} type="text" />
-      <label>Longitude</label>
-      <input ref={longitudeRef} type="text" />
-      <label>Open time</label>
-      <input ref={openTimeRef} type="text" />
-      <button>Button</button>
+      <label>Name</label><br />
+      <input ref={nameRef} type="text" /><br />
+      <label>Latitude</label><br />
+      <input ref={latitudeRef} type="text" /><br />
+      <label>Longitude</label><br />
+      <input ref={longitudeRef} type="text" /><br />
+      <label>Open time</label><br />
+      <input ref={openTimeRef} type="text" /><br /><br />
+      <Button>Button</Button>
     </div>
   )
 }

@@ -1,15 +1,14 @@
-
 import { useEffect, useRef, useState } from "react";
-// import productsJSON from '../../data/products.json';
-import { Link } from "react-router-dom";
-import {Table} from 'react-bootstrap'
 import AdminHome from "./AdminHome.tsx";
 import { ToastContainer, toast } from 'react-toastify';
 import type { Product } from "../../models/Product.ts";
+import { useTranslation } from "react-i18next";
+// import productsJSON from '../../data/products.json';
 
 
 
 function AddProduct() {
+      const { t } = useTranslation();
       const [products, setProducts] = useState<Product[]>([]);
       const [unique, setUnique] = useState(true);
 
@@ -22,14 +21,13 @@ function AddProduct() {
       const ratingRateRef = useRef<HTMLInputElement>(null);
       const ratingCountRef = useRef<HTMLInputElement>(null);
 
-      const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+      const productsUrl = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
 
       useEffect(() => {
-          fetch(productsURL)
+          fetch(productsUrl)
           .then(res => res.json())
           .then(json => setProducts(json || []))
         }, []);
-
 
       const addProduct = () => {
         if(idRef.current === null || titleRef.current === null ||
@@ -87,11 +85,9 @@ function AddProduct() {
             "count": Number(ratingCountRef.current.value)
       }}
     );
-
         setProducts(products.slice());
-
         // saadame andmebaasi
-          fetch(productsURL, {method: "PUT", body: JSON.stringify(products)});
+          fetch(productsUrl, {method: "PUT", body: JSON.stringify(products)});
 
           idRef.current.value = "";
           titleRef.current.value = "";
@@ -103,11 +99,6 @@ function AddProduct() {
           ratingCountRef.current.value = "";
       }
 
-      // const deleteProduct = (index) => {
-      //   productsJSON.splice(index,1);
-      //   setProducts(productsJSON.slice());
-      // }
-
       const isUnique = () => { 
         const idValue = idRef.current;
         if (idValue === null) {
@@ -115,6 +106,7 @@ function AddProduct() {
         }
 
         const answer = products.find(product => product.id === Number(idValue.value));
+
         if(answer === undefined){
           setUnique(true);
         } else {
@@ -125,28 +117,27 @@ function AddProduct() {
   return (
       <div className="addProduct">
         <AdminHome />
-        {unique === false && <div className="red">Produkti nimi peab olema unikaalne</div>}
-        <label>Product ID</label><br />
+        {unique === false && <div className="red">{t("addproduct.unique-product")}</div>}
+        <label>{t("addproduct.id")}</label><br />
         <input onChange={isUnique} ref={idRef} type="number" /><br />
-        <label>Product title</label> <br />
+        <label>{t("addproduct.title")}</label> <br />
         <input ref={titleRef} type="text"/> <br />
-        <label>Price</label><br />
+        <label>{t("addproduct.price")}</label><br />
         <input ref={priceRef} type="number" /><br />
-        <label>Description</label><br />
+        <label>{t("addproduct.description")}</label><br />
         <input ref={descriptionRef} type="text" /><br />
-        <label>Category</label><br />
+        <label>{t("addproduct.category")}</label><br />
         <input ref={categoryRef} type="text" /><br />
-        <label>Add Image url</label><br />
+        <label>{t("addproduct.add-image")}</label><br />
         <input ref={imageRef} type="text" /><br />
-        <label>Rating count</label><br />
+        <label>{t("addproduct.rating-count")}</label><br />
         <input ref={ratingCountRef} type="number" /><br />
-        <label>Rating rate</label><br />
+        <label>{t("addproduct.rating-rate")}</label><br />
         <input ref={ratingRateRef} type="number" /><br />
-        <button disabled={unique === false} onClick={addProduct}>Add product</button> <br /> <br />
-        
-        <div>Products total: {products.length} pcs</div>
-        
-      <Table striped bordered hover>
+        <button disabled={unique === false} onClick={addProduct}>{t("addproduct.add")}</button>
+         <br />
+        <div>{t("addproduct.products-total")} {products.length} {t("addproduct.product-pcs")}</div>
+      {/* <Table striped bordered hover>
         <thead>
           <tr>
             <th>Id</th>
@@ -172,16 +163,14 @@ function AddProduct() {
             <td><img style={{width:"50px", borderRadius: "10px"}} className="pilt" src={product.image} alt="" /></td>
             <td>{product.rating.count}</td>
             <td>{product.rating.rate}</td>
-            {/* <td><button onClick={ () => deleteProduct(index)}>x</button></td> */}
             <td><Link to={"/muuda-auto/" + index}>
               <button>Muuda</button>
             </Link>
             </td>
           </tr>)}
         </tbody>
-      </Table>
-      
-      <ToastContainer
+      </Table>  */}
+        <ToastContainer
         position="bottom-right"
         autoClose={4000}
         theme="dark"

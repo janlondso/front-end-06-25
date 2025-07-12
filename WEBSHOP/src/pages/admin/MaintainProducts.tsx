@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import {Button, Table} from 'react-bootstrap'
 import type { Product } from '../../models/Product';
+import { useTranslation } from 'react-i18next';
 
 
 function MaintainProducts() {
+  const { t } = useTranslation();
   const searchRef = useRef<HTMLInputElement>(null);
   const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
   
@@ -46,7 +48,9 @@ function MaintainProducts() {
   return (
     <div className='maintainProducts'>
       <AdminHome />
-      <label>Otsi nimi</label>
+
+      {/*~~~~~~~~~~~ Tee tolked jarmistele tekstidele ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/}
+      <label>{t("maintainproducts.find-name")}Otsi nimi</label>
       <input ref={searchRef} type="text" />
       <Button onClick={searchTitle}>Search</Button>
       <Table striped bordered hover>

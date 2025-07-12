@@ -17,9 +17,25 @@
       },
        "adminhome": {
         "maintain-products": "Halda tooteid",
-        "editproducts": "Muuda tooteid",
-        "addproducts": "Lisa toode",
-        "maintainshops": "Halda poode",
-        "maintaincategories": "Halda tootegruppe"
+        "add-products": "Lisa toode",
+        "maintain-shops": "Halda poode",
+        "maintain-categories": "Halda tootegruppe"
+      },
+      "addproduct": {
+        "unique-product": "Produkti nimi peab olema unikaalne",
+        "id": "Toote kood",
+        "title": "Nimetus",
+        "price": "Hind",
+        "description": "Kirjeldus",
+        "category": "Kategooria",
+        "add-image": "Lisa pilt",
+        "rating-count": "Hinnangute arv",
+        "rating-rate": "Hinnang",
+        "add": "Lisa toode",
+        "products-total": "Tooteid kokku:",
+        "product-pcs": "tk"
+      },
+      "maintainproducts": {
+        "find-name": "Otsi nimi"
       }
     }

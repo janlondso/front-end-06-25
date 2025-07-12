@@ -14,10 +14,10 @@ function AdminHome() {
         <Container>
           {/* <Navbar.Brand href="#home">Navbar</Navbar.Brand> */}
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/admin/maintain-products">{t("maintain-products")}</Nav.Link>
-            <Nav.Link as={Link} to="/admin/add-product">{t("add-product")}</Nav.Link>
-            <Nav.Link as={Link} to="/admin/maintain-shops">{t("maintain-shops")}</Nav.Link>
-            <Nav.Link as={Link} to="/admin/maintain-categories">{t("maintain-categories")}</Nav.Link>
+            <Nav.Link as={Link} to="/admin/maintain-products">{t("adminhome.maintain-products")}</Nav.Link>
+            <Nav.Link as={Link} to="/admin/add-product">{t("adminhome.add-products")}</Nav.Link>
+            <Nav.Link as={Link} to="/admin/maintain-shops">{t("adminhome.maintain-shops")}</Nav.Link>
+            <Nav.Link as={Link} to="/admin/maintain-categories">{t("adminhome.maintain-categories")}</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
