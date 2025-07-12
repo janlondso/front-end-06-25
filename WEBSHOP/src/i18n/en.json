@@ -6,7 +6,8 @@
         "card": "Card",
         "login": "Login",
         "signup": "Signup",
-        "map": "Map"
+        "map": "Map",
+        "shops": "Shops"
       },
        "cart": {
         "empty-button": "Empty",

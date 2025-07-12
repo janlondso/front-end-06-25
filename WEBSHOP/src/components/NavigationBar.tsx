@@ -29,6 +29,7 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/">{t("navigationbar.home")}</Nav.Link>
             <Nav.Link as={Link} to="/admin">{t("navigationbar.admin")}</Nav.Link>
             <Nav.Link as={Link} to="/cart">{t("navigationbar.card")}</Nav.Link>
+            <Nav.Link as={Link} to="/shops">{t("navigationbar.shops")}</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/contact">{t("navigationbar.contact")}</Nav.Link>

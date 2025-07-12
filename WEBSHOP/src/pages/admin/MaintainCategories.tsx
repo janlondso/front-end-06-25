@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import type { Category } from "../../models/Category";
+import AdminHome from "./AdminHome";
 
 
 function MaintainCategories() {
@@ -31,6 +32,7 @@ function MaintainCategories() {
 
   return (
     <div>
+      <AdminHome />
       <label>Kategooria</label> <br />
       <input ref={categoryRef} type="text" /> <br />
       <button onClick={addCategory}>Lisa</button>
