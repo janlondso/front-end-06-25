@@ -11,16 +11,16 @@ import { useTranslation } from 'react-i18next';
 function MaintainProducts() {
   const { t } = useTranslation();
   const searchRef = useRef<HTMLInputElement>(null);
-  const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+  const productsUrl = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
   
   const [products, setProducts] = useState<Product[]>([]);
-  const [doProducts, setDoProducts] = useState<Product[]>([])
+  const [dbProducts, setDbProducts] = useState<Product[]>([])
    useEffect(() => {
-            fetch(productsURL)
+            fetch(productsUrl)
             .then(res => res.json())
             .then(json =>{
               setProducts(json || [])
-               setDoProducts(json || []);  // originaal andmetooted
+               setDbProducts(json || []);  // originaal andmetooted
                // millest saan filtreerida (neid ei tohiks muuta)
               })
           }, []);
@@ -30,7 +30,7 @@ function MaintainProducts() {
         products.splice(index,1);
         setProducts(products.slice());
         toast.success("Item deleted!")
-        fetch(productsURL, {method: "PUT", body: JSON.stringify(products)});
+        fetch(productsUrl, {method: "PUT", body: JSON.stringify(products)});
       }
       // Search title
      const searchTitle = () => {
@@ -40,7 +40,7 @@ function MaintainProducts() {
         return;
       };
 
-        const answer = doProducts.filter(product =>
+        const answer = dbProducts.filter(product =>
           product.title.toLowerCase().includes(inputValue.value.toLowerCase()));
         setProducts(answer);
     };
@@ -75,8 +75,8 @@ function MaintainProducts() {
           <td>{product.description}</td>
           <td>{product.category}</td>
           <td><img style={{width: "50px", borderRadius: "10px"}} src={product.image} alt="" /></td>
-          {/* <td>{product.rating.count}</td>
-          <td>{product.rating.rate}</td> */}
+          <td>{product.rating.count}</td>
+          <td>{product.rating.rate}</td>
           <td><Button className='btn-secondary' onClick={ () => deleteItem(index)}>x</Button></td>
           <td> 
             <Link to={"/admin/edit-product/" + index}>

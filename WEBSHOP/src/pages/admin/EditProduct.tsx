@@ -20,13 +20,13 @@ function EditProduct() {
       const ratingCountRef = useRef<HTMLInputElement>(null);
 
       const [products, setProducts] = useState<Product[]>([]);
-      const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+      const productsUrl = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
       const [loading, setLoading] = useState(true);
         
       const found = products[Number(index)];
       
         useEffect(() => {
-                  fetch(productsURL)
+                  fetch(productsUrl)
                   .then(res => res.json())
                   .then(json => {
                     setProducts(json || [])
@@ -95,7 +95,7 @@ function EditProduct() {
           }
         }
 
-        fetch(productsURL, {method: "PUT", body: JSON.stringify(products)})
+        fetch(productsUrl, {method: "PUT", body: JSON.stringify(products)})
           .then(() => navigate("/admin/maintain-products/"));
         }
 
@@ -126,7 +126,7 @@ function EditProduct() {
         <input ref={ratingCountRef} defaultValue={found?.rating.count || ''} type="number" /><br />
         <label>Rating rate</label><br />
         <input ref={ratingRateRef} defaultValue={found?.rating.rate ||''} type="number" /><br />
-        <button onClick={changeProduct}>Muuda toode</button>
+        <button onClick={changeProduct}>Muuda toodet</button>
       </div>
     )
 }
