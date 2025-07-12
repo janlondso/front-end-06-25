@@ -1,5 +1,5 @@
-import { useState } from "react"
-import productsFromFile from '../../data/products.json'
+import { useEffect, useState } from "react"
+// import productsFromFile from '../../data/products.json'
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Button from '@mui/material/Button';
@@ -8,8 +8,20 @@ import type { Product } from "../../models/Product";
 
 
 function HomePage() {
-  const [products, setProducts] = useState(productsFromFile.slice());
-  // const searchRef = useRef<HTMLInputElement>(null);
+
+const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+
+const [products, setProducts] = useState<Product[]>([]);
+  const [doProducts, setDoProducts] = useState<Product[]>([])
+   useEffect(() => {
+            fetch(productsURL)
+            .then(res => res.json())
+            .then(json =>{
+              setProducts(json || [])
+               setDoProducts(json || []);  // originaal andmetooted
+               // millest saan filtreerida (neid ei tohiks muuta)
+              })
+          }, []);
 
 // A to Z
    const sortAtoZ = () => {
@@ -44,7 +56,7 @@ function HomePage() {
 
 // Search product category
      const filterByCategory = (categoryClicked: string) => {
-        const answer = productsFromFile.filter(product => product.category === categoryClicked);
+        const answer = doProducts.filter(product => product.category === categoryClicked);
         setProducts(answer);
     }
  // Add to card

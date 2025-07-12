@@ -1,0 +1,24 @@
+{
+        "navigationbar": {
+        "home": "Avaleht",
+        "admin": "Admin",
+        "card": "Ostukorv",
+        "contact": "Kontakt",
+        "login": "Logi sisse",
+        "signup": "Registreeru",
+        "map": "Kaart"
+      },
+       "cart": {
+        "empty-button": "Tühjenda",
+        "in-cart": "Ostukorvis on",
+        "item(s)": "Ese(t)",
+        "empty-cart": "Ostukorv on tühi"
+      },
+       "adminhome": {
+        "maintain-products": "Halda tooteid",
+        "editproducts": "Muuda tooteid",
+        "addproducts": "Lisa toode",
+        "maintainshops": "Halda poode",
+        "maintaincategories": "Halda tootegruppe"
+      }
+    }

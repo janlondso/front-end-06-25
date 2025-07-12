@@ -1,15 +1,16 @@
 
-import { useRef, useState } from "react";
-import productsJSON from '../../data/products.json';
+import { useEffect, useRef, useState } from "react";
+// import productsJSON from '../../data/products.json';
 import { Link } from "react-router-dom";
 import {Table} from 'react-bootstrap'
 import AdminHome from "./AdminHome.tsx";
 import { ToastContainer, toast } from 'react-toastify';
+import type { Product } from "../../models/Product.ts";
 
 
 
 function AddProduct() {
-      const [products, setProducts] = useState(productsJSON);
+      const [products, setProducts] = useState<Product[]>([]);
       const [unique, setUnique] = useState(true);
 
       const idRef = useRef<HTMLInputElement>(null);
@@ -20,6 +21,15 @@ function AddProduct() {
       const imageRef = useRef<HTMLInputElement>(null);
       const ratingRateRef = useRef<HTMLInputElement>(null);
       const ratingCountRef = useRef<HTMLInputElement>(null);
+
+      const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+
+      useEffect(() => {
+          fetch(productsURL)
+          .then(res => res.json())
+          .then(json => setProducts(json || []))
+        }, []);
+
 
       const addProduct = () => {
         if(idRef.current === null || titleRef.current === null ||
@@ -65,7 +75,7 @@ function AddProduct() {
           return;
         }
 
-        productsJSON.push({
+        products.push({
           "id": Number(idRef.current.value),
           "title": titleRef.current.value,
           "price": Number(priceRef.current.value),
@@ -78,7 +88,11 @@ function AddProduct() {
       }}
     );
 
-        setProducts(productsJSON.slice());
+        setProducts(products.slice());
+
+        // saadame andmebaasi
+          fetch(productsURL, {method: "PUT", body: JSON.stringify(products)});
+
           idRef.current.value = "";
           titleRef.current.value = "";
           priceRef.current.value = "";
@@ -95,12 +109,12 @@ function AddProduct() {
       // }
 
       const isUnique = () => { 
-        const titleValue = titleRef.current;
-        if (titleValue === null) {
+        const idValue = idRef.current;
+        if (idValue === null) {
           return;
         }
 
-        const answer = productsJSON.find(product => product.title === titleValue.value);
+        const answer = products.find(product => product.id === Number(idValue.value));
         if(answer === undefined){
           setUnique(true);
         } else {
@@ -113,9 +127,9 @@ function AddProduct() {
         <AdminHome />
         {unique === false && <div className="red">Produkti nimi peab olema unikaalne</div>}
         <label>Product ID</label><br />
-        <input ref={idRef} type="number" /><br />
+        <input onChange={isUnique} ref={idRef} type="number" /><br />
         <label>Product title</label> <br />
-        <input onChange={isUnique} ref={titleRef} type="text"/> <br />
+        <input ref={titleRef} type="text"/> <br />
         <label>Price</label><br />
         <input ref={priceRef} type="number" /><br />
         <label>Description</label><br />

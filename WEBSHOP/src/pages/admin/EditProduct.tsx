@@ -1,19 +1,15 @@
 import AdminHome from "./AdminHome";
-import { useRef } from "react";
-import productsJSON from '../../data/products.json';
+import { useEffect, useRef, useState } from "react";
+// import productsJSON from '../../data/products.json';
 import { useNavigate, useParams } from "react-router-dom";
-
+import type { Product } from "../../models/Product";
+import { Spinner } from "react-bootstrap";
 
 
 function EditProduct() {
       const { index } = useParams<{index: string}>();
-      if (index === undefined) {
-        return <div>Index on puudu...</div>
-      }
-        // const found = productsJSON.find(product => product.title === index);
-      const found = productsJSON[Number(index)];      
+      // const found = productsJSON.find(product => product.title === index);
       const navigate = useNavigate();
-
       const idNumberRef = useRef<HTMLInputElement>(null);
       const titleRef = useRef<HTMLInputElement>(null);
       const priceRef = useRef<HTMLInputElement>(null);
@@ -22,6 +18,25 @@ function EditProduct() {
       const imageRef = useRef<HTMLInputElement>(null);
       const ratingRateRef = useRef<HTMLInputElement>(null);
       const ratingCountRef = useRef<HTMLInputElement>(null);
+
+      const [products, setProducts] = useState<Product[]>([]);
+      const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+      const [loading, setLoading] = useState(true);
+        
+      const found = products[Number(index)];
+      
+        useEffect(() => {
+                  fetch(productsURL)
+                  .then(res => res.json())
+                  .then(json => {
+                    setProducts(json || [])
+                  setLoading(false);
+                  })
+                }, []);
+
+        if (index === undefined) {
+          return <div>Index on puudu...</div>
+      }
 
       const changeProduct = () => {
         if(idNumberRef.current === null || titleRef.current === null ||
@@ -67,7 +82,7 @@ function EditProduct() {
           return;
         }
 
-        productsJSON[Number(index)] = {
+        products[Number(index)] = {
           "id": Number(idNumberRef.current.value),
           "title": titleRef.current.value,
           "price": Number(priceRef.current.value),
@@ -79,12 +94,18 @@ function EditProduct() {
             "count": Number(ratingCountRef.current.value)
           }
         }
-        navigate("/admin/maintain-products/");
-      }
 
-      if (found === undefined) {
-        return  <div>Ei leitud</div>;
-      }
+        fetch(productsURL, {method: "PUT", body: JSON.stringify(products)})
+          .then(() => navigate("/admin/maintain-products/"));
+        }
+
+       if(loading) {
+          return <Spinner /> // Loading ...
+        }
+
+        if (found === undefined) {
+        return <div>Ei leitud</div>;
+        }
 
   return (
       <div className="editProduct">
@@ -111,3 +132,7 @@ function EditProduct() {
 }
 
 export default EditProduct
+
+// API-s
+
+// https://reqres.in/api/users?page=2

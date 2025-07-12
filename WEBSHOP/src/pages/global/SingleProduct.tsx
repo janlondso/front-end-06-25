@@ -1,11 +1,31 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import productsFromFile from '../../data/products.json'
+import type { Product } from '../../models/Product';
+import { Spinner } from 'react-bootstrap';
+// import productsFromFile from '../../data/products.json'
 
 
 function SingleProduct() {
   const { id } = useParams();
-  const found = productsFromFile.find(product => product.id === Number(id));
+  const [products, setProducts] = useState<Product[]>([]);
+  const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+  const [loading, setLoading] = useState(true);
   
+  const found = products.find(product => product.id === Number(id));
+
+  useEffect(() => {
+            fetch(productsURL)
+            .then(res => res.json())
+            .then(json => {
+              setProducts(json || [])
+            setLoading(false);
+            })
+          }, []);
+          
+  if(loading) {
+    return <Spinner /> // Loading ...
+  }
+
   if(!found) {
     return <div>No products found</div>
   }

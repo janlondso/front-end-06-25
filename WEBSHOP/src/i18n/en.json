@@ -1,0 +1,24 @@
+{
+        "navigationbar": {
+        "home": "Home",
+        "admin": "Admin",
+        "contact": "Contact Us",
+        "card": "Card",
+        "login": "Login",
+        "signup": "Signup",
+        "map": "Map"
+      },
+       "cart": {
+        "empty-button": "Empty",
+        "in-cart": "There is",
+        "item(s)": "Item(s)",
+        "empty-cart": "Cart is empty"
+      },
+      "adminhome": {
+        "maintain-products": "Maintain products",
+        "editproducts": "Edit products",
+        "addproducts": "Add product",
+        "maintainshops": "Maintain shops",
+        "maintaincategories": "Maintain categories"
+      }
+    }
