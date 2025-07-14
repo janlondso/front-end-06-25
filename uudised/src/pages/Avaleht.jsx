@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Avaleht.css'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Avaleht() {
     const [postitused, uuenaPostitused] = useState([]);
@@ -9,8 +10,8 @@ function Avaleht() {
       fetch("https://jsonplaceholder.typicode.com/posts")
         .then(response => response.json())
         .then(json => uuenaPostitused(json))
-
     }, []);
+
     return (  
         <div>
             <h2>See on avaleht, nähtav localhost: 3000 aadressil</h2>
@@ -21,6 +22,12 @@ function Avaleht() {
                 <div><u>{element.id}</u></div>
                 <div><b>{element.title}</b></div>
                 <div>{element.body}</div>
+                <Link to={"/kasutaja-postitused/" + element.userId}>
+                  <button>Kõik kasutaja postitused</button>
+                </Link>
+                <Link to={"/vaata-postitust/" + element.id}>
+                  <button>Vaata postitust</button>
+                </Link>
               </div>
             )}
         </div>

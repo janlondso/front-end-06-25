@@ -13,6 +13,8 @@ import LisaUudis from './pages/LisaUudis'
 import HaldaUudiseid from './pages/HaldaUudiseid'
 import YksUudis from './pages/YksUudis'
 import MuudaUudis from './pages/MuudaUudis'
+import KasutajaPostitus from './pages/KasutajaPostitus'
+import YksPostitus from './pages/YksPostitus'
 
 
 function App() {
@@ -24,12 +26,12 @@ function App() {
       <Link to="/kontakt"><button>Kontakt</button></Link>
       <Link to="/meist"><button>Personal</button></Link>
       <Link to="/sisselogimine"><button>Sisselogimine</button></Link>
+      <Link to="/lisa-uudis"><button>Lisa uudis</button> </Link>
+      <Link to="/halda"><button>Halda uudiseid</button> </Link>
       
       {/* <Link to="/months"><button>Months</button></Link> */}
       {/* <Link to="/animals"><button>Animals</button></Link> */}
       {/* <Link to="/words"><button>Words</button> </Link> */}
-      <Link to="/lisa-uudis"><button>Lisa uudis</button> </Link>
-      <Link to="/halda"><button>Halda uudiseid</button> </Link>
 
       <Routes>
         <Route path='/' element={ <Avaleht /> } />
@@ -45,6 +47,8 @@ function App() {
         <Route path='/halda' element={ <HaldaUudiseid /> } />
         <Route path='/uudis/:index' element={ <YksUudis /> } />
         <Route path='/muuda/:index' element={ <MuudaUudis /> } />
+        <Route path='/kasutaja-postitused/:kasutajaId' element={ <KasutajaPostitus /> } />
+        <Route path='/vaata-postitust/:postituseId' element={ <YksPostitus /> } />
       </Routes>
     </>
   )

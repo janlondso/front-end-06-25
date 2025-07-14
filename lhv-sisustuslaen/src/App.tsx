@@ -9,7 +9,6 @@ import trashIcon from './assets/trash.png'
 
 
 function App() {
-
   return (
     <div className='app'>
       <div className='container-one'>
@@ -25,8 +24,29 @@ function App() {
           </div>
         </div>
       </div>
-      {/* container-two */}
       <div className="container-two">
+        <div>
+          <h1><b>Koosta soovinimekiri</b> ja vaata oma uue sisustuse kuumakset</h1>
+        </div>
+        <div className="flex-container">
+          <div className="box-left">
+            <table>
+              <thead>
+                <tr>
+                  <th className='header-label'>TOODE</th>
+                  <th className='header-label'>HIND</th>
+                  <th></th>
+                  
+
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div className="box-right">Right</div>
+        </div>
+      </div>
+      {/* container-two */}
+      {/* <div className="container-two">
         <h1><b>Koosta soovinimekiri</b> ja vaata oma uue sisustuse kuumakset</h1>
         <div className="container">
           <div className="box">
@@ -73,10 +93,10 @@ function App() {
             <p className='check'><a href="#">Tutvu tingimustega</a></p>
           </div>
         </div>
-      </div>
+      </div> */}
+
       {/* Container three */}
       <div className="container-three">
-
         <div className="container-box">
            <div className='support-image'><img className='support-img' src={supportBox} alt="" /></div>
         <div className='support-text'> 

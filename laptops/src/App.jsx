@@ -9,6 +9,7 @@ import Seaded from './pages/Seaded'
 import { useState } from 'react'
 import { useRef } from 'react'
 import Ostukorv from './pages/Ostukorv'
+import Tooted from './pages/Tooted'
 
 function App() {
   const [sisseLogitud, muudaSisseLogitud] = useState("ei");
@@ -65,15 +66,19 @@ function App() {
       <Link to="/cart">
         <button>Ostukorv</button>
       </Link>
+      <Link to="/products">
+        <button>Vaata tooteid</button>
+      </Link>
 
       <Routes>
-        <Route path='' exact element={ <Avaleht /> } />
-        <Route path='all' exact element={ <VaataArvuteid /> } />
-        <Route path='add' exact element={ <Lisaarvuti /> } />
-        <Route path='about-us' exact element={ <Meist /> } />
-        <Route path='contact' exact element={ <Kontakt /> } />
-        <Route path='seaded' element={ <Seaded />} />
-        <Route path='cart' exact element={ <Ostukorv /> } />
+        <Route path='/' exact element={ <Avaleht /> } />
+        <Route path='/all' exact element={ <VaataArvuteid /> } />
+        <Route path='/add' exact element={ <Lisaarvuti /> } />
+        <Route path='/about-us' exact element={ <Meist /> } />
+        <Route path='/contact' exact element={ <Kontakt /> } />
+        <Route path='/seaded' element={ <Seaded />} />
+        <Route path='/cart' exact element={ <Ostukorv /> } />
+        <Route path='/products' exact element={ <Tooted /> } />
       </Routes>
     </div>
   )
