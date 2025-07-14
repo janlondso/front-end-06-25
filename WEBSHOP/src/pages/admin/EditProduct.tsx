@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Product } from "../../models/Product";
 import { Spinner } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 
 function EditProduct() {
+      const { t } = useTranslation();
       const { index } = useParams<{index: string}>();
       // const found = productsJSON.find(product => product.title === index);
       const navigate = useNavigate();
@@ -30,7 +32,7 @@ function EditProduct() {
                   .then(res => res.json())
                   .then(json => {
                     setProducts(json || [])
-                  setLoading(false);
+                    setLoading(false);
                   })
                 }, []);
 
@@ -104,29 +106,29 @@ function EditProduct() {
         }
 
         if (found === undefined) {
-        return <div>Ei leitud</div>;
+        return <div>{t("edit-products.not-found")}</div>;
         }
 
   return (
       <div className="editProduct">
         <AdminHome />
-        <label>Product ID</label><br />
+        <label>{t("edit-products.id")}</label><br />
         <input ref={idNumberRef} defaultValue={found?.id || ''} type="number" /><br />
-        <label>Product title</label> <br />
+        <label>{t("edit-products.title")}</label> <br />
         <input ref={titleRef} defaultValue={found?.title || ''} type="text"/> <br />
-        <label>Price</label><br />
+        <label>{t("edit-products.price")}</label><br />
         <input ref={priceRef} defaultValue={found?.price || ''} type="number" /><br />
-        <label>Description</label><br />
+        <label>{t("edit-products.description")}</label><br />
         <input ref={descriptionRef} defaultValue={found?.description ||''} type="text" /><br />
-        <label>Category</label><br />
+        <label>{t("edit-products.category")}</label><br />
         <input ref={categoryRef} defaultValue={found?.category ||''} type="text" /><br />
-        <label>Add Image url</label><br />
+        <label>{t("edit-products.add-image")}</label><br />
         <input ref={imageRef} defaultValue={found?.image ||''} type="text" /><br />
-        <label>Rating count</label><br />
+        <label>{t("edit-products.rating-count")}</label><br />
         <input ref={ratingCountRef} defaultValue={found?.rating.count || ''} type="number" /><br />
-        <label>Rating rate</label><br />
+        <label>{t("edit-products.rating-rate")}</label><br />
         <input ref={ratingRateRef} defaultValue={found?.rating.rate ||''} type="number" /><br />
-        <button onClick={changeProduct}>Muuda toodet</button>
+        <button onClick={changeProduct}>{t("edit-products.btn-change")}</button>
       </div>
     )
 }

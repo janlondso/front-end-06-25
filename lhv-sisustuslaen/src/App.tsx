@@ -11,7 +11,7 @@ import trashIcon from './assets/trash.png'
 function App() {
 
   return (
-    <div>
+    <div className='app'>
       <div className='container-one'>
         <div className="blue-container">
           <div className='info-box'>
@@ -33,14 +33,14 @@ function App() {
             <table>
               <thead>
                 <tr>
-                  <th>TOODE</th>
-                  <th>HIND</th>
+                  <th className='header-label'>TOODE</th>
+                  <th className='header-label'>HIND</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Diivan</td>
+                  <td><input type="text" placeholder='Diivan' /></td>
                   <td>500</td>
                   <td className='eur'>€</td>
                 </tr>
@@ -52,12 +52,16 @@ function App() {
                 <tr>
                   <td className='no-border'>
                     <p className='add'><img className='plus'
-                    src={plusIcon} alt="" />Lisa toode</p>  
+                    src={plusIcon} alt="" />
+                    Lisa toode
+                    </p>  
                   </td>
                   <td className='no-border'></td>
                   <td className='no-border'>
                     <p className='delete'><img className='trash'
-                    src={trashIcon} alt="" />Kustuta</p>
+                    src={trashIcon} alt="" />
+                    Kustuta
+                    </p>
                   </td>
                 </tr>
               </tbody>

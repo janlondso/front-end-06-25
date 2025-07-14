@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import type { Product } from '../../models/Product';
 import { Spinner } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 // import productsFromFile from '../../data/products.json'
 
 
 function SingleProduct() {
+  const { t } = useTranslation();
   const { id } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
   const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
@@ -18,7 +20,7 @@ function SingleProduct() {
             .then(res => res.json())
             .then(json => {
               setProducts(json || [])
-            setLoading(false);
+              setLoading(false);
             })
           }, []);
           

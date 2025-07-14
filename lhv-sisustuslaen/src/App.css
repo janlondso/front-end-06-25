@@ -9,6 +9,8 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -210,4 +212,13 @@ td.no-border {
 .email-icon {
   width: 20px;
   height: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-one,
+  .container-two,
+  .container-three {
+    display: flex;
+    flex-direction: column;
+  }
 }

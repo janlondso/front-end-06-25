@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import employeesData from '../../src/data/employees.json'
 
@@ -12,9 +12,9 @@ function Employees() {
   const avatarRef = useRef();
 
   // TODO: Load data from backend service
-    // useEffect(() => {
-  //   fetch("https://reqres.in/api/users")
-  //   .then(res => res.JSON())
+  //   useEffect(() => {
+  //     fetch("https://reqres.in/api/users?page=2")
+  //   .then(res => res.json())
   //   .then(json => setEmployees(json.results))
   // }, [])
 

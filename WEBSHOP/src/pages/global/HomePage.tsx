@@ -9,9 +9,9 @@ import type { Product } from "../../models/Product";
 
 function HomePage() {
 
-const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
+  const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
 
-const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [doProducts, setDoProducts] = useState<Product[]>([])
    useEffect(() => {
             fetch(productsURL)

@@ -6,7 +6,8 @@ function Products() {
   const priceRef = useRef();
   const quantityRef = useRef();
   const storeRef = useRef();
-  const [products, setProducts] = useState([
+  const [products, setProducts] = useState(
+    [
     { name: 'Cupcake', price: 1.99, quantity: 7, store: 'Downtown store' },
     { name: 'Cheesecake', price: 2, quantity: 2, store: 'Ülemiste store' },
     { name: 'Bread', price: 3, quantity: 5, store: 'Lasnamäe store' },
@@ -17,7 +18,8 @@ function Products() {
     { name: 'Bread', price: 5, quantity: 10, store: 'Lasnamäe store' },
     { name: 'Croissant', price: 1.8, quantity: 1, store: 'Lasnamäe store' },
     { name: 'Chocolate chip cookie', price: 3.25, quantity: 3, store: 'Mustamäe store' }
-  ]);
+  ]
+);
 
   const addProduct = () => {
     const newProduct = {

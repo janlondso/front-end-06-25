@@ -37,5 +37,17 @@
       },
       "maintainproducts": {
         "find-name": "Otsi nimi"
+      },
+      "edit-products": {
+        "not-found": "Toodet ei leitud",
+        "id": "Toote kood",
+        "title": "Nimetus",
+        "price": "Hind",
+        "description": "Kirjeldus",
+        "category": "Kategooria",
+        "add-image": "Lisa pilt",
+        "rating-count": "Hinnangute arv",
+        "rating-rate": "Hinnang",
+        "btn-change": "Muuda toodet"
       }
     }

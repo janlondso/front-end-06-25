@@ -1,12 +1,20 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import AdminHome from "./AdminHome"
 import { Button } from "react-bootstrap";
 
 function MaintainShops() {
+  const shopsUrl = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/shops.json"
+  const [shops, setShops] = useState([]);
   const nameRef = useRef<HTMLInputElement>(null);
   const latitudeRef = useRef<HTMLInputElement>(null);
   const longitudeRef = useRef<HTMLInputElement>(null);
   const openTimeRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    fetch(shopsUrl)
+    .then(res => res.json())
+    .then(json => setShops(json || []))
+  }, []);
 
   // .push()
 

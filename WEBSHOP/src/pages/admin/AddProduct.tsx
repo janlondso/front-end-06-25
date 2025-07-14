@@ -120,6 +120,7 @@ function AddProduct() {
         {unique === false && <div className="red">{t("addproduct.unique-product")}</div>}
         <label>{t("addproduct.id")}</label><br />
         <input onChange={isUnique} ref={idRef} type="number" /><br />
+        
         <label>{t("addproduct.title")}</label> <br />
         <input ref={titleRef} type="text"/> <br />
         <label>{t("addproduct.price")}</label><br />

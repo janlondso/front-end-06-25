@@ -37,5 +37,17 @@
       },
       "maintainproducts": {
         "find-name": "Find name"
+      },
+      "edit-products": {
+        "not-found": "Toodet ei leitud",
+        "id": "Product ID",
+        "title": "Title",
+        "price": "Price",
+        "description": "Description",
+        "category": "Category",
+        "add-image": "Add image",
+        "rating-count": "Rating count",
+        "rating-rate": "Rating rate",
+        "btn-change": "Change product"
       }
     }
