@@ -13,7 +13,9 @@
         "empty-button": "Tühjenda",
         "in-cart": "Ostukorvis on",
         "item(s)": "Ese(t)",
-        "empty-cart": "Ostukorv on tühi"
+        "empty-cart": "Ostukorv on tühi",
+        "pay-bill": "Alusta makset",
+        "total-sum": "Summa kokku"
       },
        "adminhome": {
         "maintain-products": "Halda tooteid",

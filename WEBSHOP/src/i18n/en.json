@@ -13,7 +13,9 @@
         "empty-button": "Empty",
         "in-cart": "There is",
         "item(s)": "Item(s)",
-        "empty-cart": "Cart is empty"
+        "empty-cart": "Cart is empty",
+        "pay-bill": "Pay",
+        "total-sum": "Total sum"
       },
       "adminhome": {
         "maintain-products": "Maintain products",

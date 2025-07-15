@@ -57,8 +57,8 @@ function Cart() {
         </div>
       ))}
       <br /> <br />
-      <div>Summa kokku {totalSum()}</div>
-      <Button variant="contained">Alusta makset</Button>
+      <div>{t("cart.total-sum")} - {totalSum()}</div> <br />
+      <Button variant="contained">{t("cart.pay-bill")}</Button>
       {/* <button onClick={reset}>Tühjenda</button> */}
     </div>
   );
