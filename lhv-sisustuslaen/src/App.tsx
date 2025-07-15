@@ -4,11 +4,15 @@ import imageBox from './assets/img1.png'
 import supportBox from './assets/support.png'
 import phoneImg from './assets/phone-call.png'
 import emailImg from './assets/email.png'
-import plusIcon from './assets/plus.png'
-import trashIcon from './assets/trash.png'
+// import plusIcon from './assets/plus.png'
+// import trashIcon from './assets/trash.png'
+// import { useState } from 'react'
 
 
 function App() {
+  // const [price, setPrice] = useState(0);
+  // refid
+  // add function
   return (
     <div className='app'>
       <div className='container-one'>
@@ -36,10 +40,15 @@ function App() {
                   <th className='header-label'>TOODE</th>
                   <th className='header-label'>HIND</th>
                   <th></th>
-                  
-
                 </tr>
               </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" /></td>
+                  <td><input type="number" /></td>
+                </tr>
+                {}
+              </tbody>
             </table>
           </div>
           <div className="box-right">Right</div>
