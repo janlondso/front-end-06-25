@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 // import productsFromFile from '../../data/products.json'
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import ButtonGroup from "@mui/material/ButtonGroup";
 import type { Product } from "../../models/Product";
+import type { CartProduct } from "../../models/CartProduct";
+import { CartSumContext } from "../../context/CartSumContext";
 
 
 function HomePage() {
 
   const productsURL = "https://webshop-3d994-default-rtdb.europe-west1.firebasedatabase.app/products.json"
-
   const [products, setProducts] = useState<Product[]>([]);
-  const [doProducts, setDoProducts] = useState<Product[]>([])
+  const [doProducts, setDoProducts] = useState<Product[]>([]);
+  const {cartSum, setCartSum} = useContext(CartSumContext);
+
    useEffect(() => {
             fetch(productsURL)
             .then(res => res.json())
@@ -25,13 +28,13 @@ function HomePage() {
 
 // A to Z
    const sortAtoZ = () => {
-        products.sort((a,b) => a.title.localeCompare(b.title)); // tahestiku jargi
-        setProducts(products.slice());
+      products.sort((a,b) => a.title.localeCompare(b.title)); // tahestiku jargi
+      setProducts(products.slice());
     }
 // Z to A
     const sortZtoA = () => {
-        products.sort((a,b) => b.title.localeCompare(a.title)); // tahestiku jargi tagurpidi
-        setProducts(products.slice());
+      products.sort((a,b) => b.title.localeCompare(a.title)); // tahestiku jargi tagurpidi
+      setProducts(products.slice());
     }
 // Price up
     const sortPriceUp = () => {
@@ -56,13 +59,19 @@ function HomePage() {
 
 // Search product category
      const filterByCategory = (categoryClicked: string) => {
-        const answer = doProducts.filter(product => product.category === categoryClicked);
-        setProducts(answer);
+      const answer = doProducts.filter(product => product.category === categoryClicked);
+      setProducts(answer);
     }
  // Add to card
   const addToCart = (item: Product) => {
-    const localBasket = JSON.parse(localStorage.getItem("cart") || "[]");
-    localBasket.push(item);
+      const localBasket: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
+    const found = localBasket.find(cp => cp.product.id === item.id);
+    if(found !== undefined){
+      found.quantity = found.quantity + 1;
+    } else {
+      localBasket.push({product: item, quantity: 1});
+    }
+    setCartSum(cartSum + item.price);
     localStorage.setItem("cart", JSON.stringify(localBasket));
     toast.success("Item added to your card!");
   }

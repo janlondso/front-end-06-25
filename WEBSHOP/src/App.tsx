@@ -15,9 +15,12 @@ import NotFound from './pages/global/NotFound'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
 import ContactUs from './pages/global/ContactUs'
-import Map from './pages/global/Map'
+import { useContext } from 'react'
+import { AuthContext } from './context/AuthContext'
 
 function App() {
+  const {loggedIn} = useContext(AuthContext);
+  
   return (
   
   <div className='App'>
@@ -29,13 +32,15 @@ function App() {
         <Route path='shops' element={ <Shops />} />
         <Route path='cart' element={ <Cart />} />
         <Route path='product/:id' element={ <SingleProduct />} />
-        <Route path='map' element={ <Map />} />
+    {loggedIn === true &&
+      <>
         <Route path='admin' element={ <AdminHome />} />
         <Route path='admin/add-product' element={ <AddProduct />} />
         <Route path='admin/edit-product/:index' element={ <EditProduct/>} />
         <Route path='admin/maintain-products' element={ <MaintainProducts />} />
         <Route path='admin/maintain-categories' element={ <MaintainCategories />} />
         <Route path='admin/maintain-shops' element={ <MaintainShops />} />
+    </>}
         <Route path='login' element={ <Login />} />
         <Route path='signup' element={ <Signup />} />
         <Route path='*' element={ <NotFound />} />
