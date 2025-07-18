@@ -1,23 +1,15 @@
-import NavBar from "../components/NavBar"
 import ThemeToggle from "../components/ThemeToggle"
-import StarBackground from "@/components/StarBackground"
-import HeroSection from "../components/HeroSection"
 
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden"> 
       {/* Theme toggle */}
         <ThemeToggle />
-
       {/* Background Effects */}
-        <StarBackground />
 
       {/* Navbar */}
-        <NavBar />
+
       {/* Main Content */}
-      <main>
-        <HeroSection />
-      </main>
 
       {/* Footer */}
 
