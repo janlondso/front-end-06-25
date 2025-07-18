@@ -2,6 +2,7 @@ import NavBar from "../components/NavBar"
 import ThemeToggle from "../components/ThemeToggle"
 import StarBackground from "@/components/StarBackground"
 import HeroSection from "../components/HeroSection"
+import AboutSection from "../components/AboutSection"
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       {/* Main Content */}
       <main>
         <HeroSection />
+        <AboutSection />
       </main>
 
       {/* Footer */}
