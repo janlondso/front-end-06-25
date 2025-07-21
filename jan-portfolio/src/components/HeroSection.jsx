@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react"
 
+
 function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4">
@@ -7,11 +8,11 @@ function HeroSection() {
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in">Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">
+            <span className="opacity-0 animate-fade-in-delay-1">
                 {" "}
                 Jan
             </span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
+            <span className=" ml-2 opacity-0 animate-fade-in-delay-2">
                 {" "}
                 Lõndso
             </span>

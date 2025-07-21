@@ -25,10 +25,10 @@ const resources = {
   et: {
     translation: {
      "navigation": {
-        "home": "Home",
-        "about": "About me",
-        "skills": "Skills",
-        "projects": "Projects"
+        "home": "Avaleht",
+        "about": "Minust",
+        "skills": "Oskused",
+        "projects": "Projektid"
       },
       // siit alt tuleb muuta
       "cart": {

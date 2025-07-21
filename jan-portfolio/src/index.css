@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Icon */
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.icon:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+.icon:active {
+  padding: 1px;
+}
