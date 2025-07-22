@@ -11,7 +11,8 @@ const resources = {
         "home": "Home",
         "about": "About me",
         "skills": "Skills",
-        "projects": "Projects"
+        "projects": "Projects",
+        "contact": "Contact",
       },
       // Siit alt tuleb muuta
       "about": {
@@ -24,11 +25,12 @@ const resources = {
   },
   et: {
     translation: {
-     "navigation": {
+    "navigation": {
         "home": "Avaleht",
-        "about": "Minust",
+        "about": "Tutvume",
         "skills": "Oskused",
-        "projects": "Projektid"
+        "projects": "Projektid",
+        "contact": "Kontakt",
       },
       // siit alt tuleb muuta
       "cart": {
