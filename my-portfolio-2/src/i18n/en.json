@@ -1,55 +1,10 @@
 {
         "navigationbar": {
+        "logo": "Jan's Portfolio",
         "home": "Home",
-        "admin": "Admin",
-        "contact": "Contact Us",
-        "card": "Card",
-        "login": "Login",
-        "signup": "Signup",
-        "map": "Map",
-        "shops": "Shops"
-      },
-       "cart": {
-        "empty-button": "Empty",
-        "in-cart": "There is",
-        "item(s)": "Item(s)",
-        "empty-cart": "Cart is empty",
-        "pay-bill": "Pay",
-        "total-sum": "Total sum"
-      },
-      "adminhome": {
-        "maintain-products": "Maintain products",
-        "add-products": "Add product",
-        "maintain-shops": "Maintain shops",
-        "maintain-categories": "Maintain categories"
-      },
-      "addproduct": {
-        "unique-product": "Product name must to be unique",
-        "id": "Product ID",
-        "title": "Product title",
-        "price": "Price",
-        "description": "Description",
-        "category": "Category",
-        "add-image": "Add image",
-        "rating-count": "Rating count",
-        "rating-rate": "Rating rate",
-        "add": "Add product",
-        "products-total": "Products total",
-        "product-pcs": "pcs"
-      },
-      "maintainproducts": {
-        "find-name": "Find name"
-      },
-      "edit-products": {
-        "not-found": "Toodet ei leitud",
-        "id": "Product ID",
-        "title": "Title",
-        "price": "Price",
-        "description": "Description",
-        "category": "Category",
-        "add-image": "Add image",
-        "rating-count": "Rating count",
-        "rating-rate": "Rating rate",
-        "btn-change": "Change product"
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
       }
     }

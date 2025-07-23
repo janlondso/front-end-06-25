@@ -5,17 +5,20 @@ import ukflag from '../assets/ukflag.png';
 import estflag from '../assets/estflag.png';
 import { useTranslation } from 'react-i18next';
 
-const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-];
 
 function NavBar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+   
+
+    { name: t("navigationbar.home"), href: "#hero" },
+    { name: t("navigationbar.about"), href: "#about" },
+    { name: t("navigationbar.skills"), href: "#skills" },
+    { name: t("navigationbar.projects"), href: "#projects" },
+    { name: t("navigationbar.contact"), href: "#contact" },
+  ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -31,10 +34,10 @@ function NavBar() {
   };
 
   return (
-    <div className="container-navbar">
+    <header className="header">
     <div className='navbar'>
       <div className="navbar-inner">
-        <h3 className='logo'>Jan's Portfolio</h3>
+        <h3 className='logo'>{t("navigationbar.logo")}</h3>
 
         {/* Desktop Navigation */}
         <nav className='menu-nav desktop-nav'>
@@ -76,7 +79,7 @@ function NavBar() {
         </nav>
       )}
     </div>
-    </div>
+    </header>
   );
 }
 
