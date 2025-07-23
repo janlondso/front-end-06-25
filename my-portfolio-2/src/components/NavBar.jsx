@@ -1,82 +1,84 @@
-import { X, Menu } from 'lucide-react';
-import {cn} from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { MenuIcon } from 'lucide-react';
+import { useState } from "react";
+import '../css/navbar.css';
+import ukflag from '../assets/ukflag.png';
+import estflag from '../assets/estflag.png';
+import { useTranslation } from 'react-i18next';
 
 const navItems = [
-    { name: "Home", href: "#hero"},
-    { name: "About", href: "#about"},
-    { name: "Skills", href: "#skills"},
-    { name: "Projects", href: "#projects"},
-    { name: "Contact", href: "#contact"},
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
 ];
 
-
 function NavBar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-          setIsScrolled(window.screenY > 10)
-        }
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-     }, []);
+  const changeLanguageEN = () => {
+    i18n.changeLanguage("en");
+    localStorage.setItem("keel", "en");
+  };
+
+  const changeLanguageET = () => {
+    i18n.changeLanguage("et");
+    localStorage.setItem("keel", "et");
+  };
 
   return (
-    <nav className={cn("fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
-    )}>
-        <div className="container flex items-center justify-between">
-          <a className="text-xl font-bold text-primary flex items-center"
-          href="#hero"
-           >
-            <span className="relative z-10">
-                <span className="text-glow text-foreground">Jan's</span> {" "}
-                Portfolio
-            </span>
-          </a>
+    <div className="container-navbar">
+    <div className='navbar'>
+      <div className="navbar-inner">
+        <h3 className='logo'>Jan's Portfolio</h3>
 
-          {/* desctop nav */}
-          <div className="hidden md:flex space-x-8">
+        {/* Desktop Navigation */}
+        <nav className='menu-nav desktop-nav'>
+          <ul>
             {navItems.map((item, key) => (
-              <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                {item.name}
-              </a>
+              <li key={key}>
+                <a href={item.href}>{item.name}</a>
+              </li>
             ))}
+          </ul>
+          <div className="flag-icons">
+            <img onClick={changeLanguageET} src={estflag} alt="Estonian" />
+            <img onClick={changeLanguageEN} src={ukflag} alt="English" />
           </div>
-          {/* mobile nav */}
+        </nav>
 
-            <button onClick={() => setIsMenuOpen((prev) => !prev)}
-              className='md:hidden p-2 text-foreground z-50'
-              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-            >
-            {" "}
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} /> }{" "}
-            </button>
-
-          <div className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col item-center justify-center", 
-            "transition-all duration-300 md:hidden",
-            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          )}>
-            <div className="flex flex-col space-y-8 text-xl">
-                {navItems.map((item, key) => (
-                <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-                >
-                    {item.name}
-                </a>
-                ))}
-            </div>
-          </div>
+        {/* Mobile Menu Toggle */}
+        <div className='mobile-menu'>
+          <button className='menu-toggle' onClick={toggleMenu} aria-label="Toggle menu">
+            <MenuIcon size={24} />
+          </button>
         </div>
-    </nav>
-  )
+      </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <nav className='menu-nav mobile-nav'>
+          <ul>
+            {navItems.map((item, key) => (
+              <li key={key}>
+                <a href={item.href} onClick={closeMenu}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+          <div className="flag-icons mobile-flags">
+            <img onClick={changeLanguageET} src={estflag} alt="Estonian" />
+            <img onClick={changeLanguageEN} src={ukflag} alt="English" />
+          </div>
+        </nav>
+      )}
+    </div>
+    </div>
+  );
 }
 
-export default NavBar
+export default NavBar;
+
