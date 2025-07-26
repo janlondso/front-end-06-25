@@ -46,6 +46,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-right: 1rem;
 }
 
 .desktop-nav a {
@@ -64,7 +65,6 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  margin-left: 1rem;
 }
 
 .flag-icons img {
@@ -118,7 +118,7 @@
 }
 
 .mobile-nav li {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 .mobile-nav a {

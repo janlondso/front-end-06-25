@@ -37,6 +37,7 @@
   color: #d0d0d0;
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .about-me-info-buttons {
@@ -79,6 +80,8 @@
 }
 
 .about-info-container-icon-box {
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
@@ -86,6 +89,12 @@
   width: 40px;
   height: 40px;
   color: #00bcd4;
+}
+
+.about-info-container-text p {
+  text-align: left;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 /* Headings inside cards */

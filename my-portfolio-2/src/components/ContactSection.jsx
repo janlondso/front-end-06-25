@@ -2,6 +2,7 @@ import emailjs from '@emailjs/browser';
 import "../css/contact.css";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitch } from "lucide-react"
 import { useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -20,11 +21,11 @@ function ContactSection() {
       
      .then(
         () => {
-          alert('SUCCESS!');
+          toast.success('Message sent!');
           form.current.reset();
         },
         (error) => {
-          alert('Failed to send message. Please try again later.');
+          toast.error('Failed to send message. Please try again later.');
           console.error('FAILED...', error?.text || error?.message || error);
         }
       );
@@ -60,7 +61,7 @@ function ContactSection() {
                 </div>
                 <div className='contact-container-box-content'>
                   <h4 >Email</h4>
-                  <a href="mailto:myemail@gmail.com" >myemail@gmail.com</a>
+                  <a href="mailto:myemail@gmail.com">myemail@gmail.com</a>
                   </div>
                 </div>
 
@@ -143,6 +144,18 @@ function ContactSection() {
             </form>
           </div>
         </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
     </section>
   )
 }

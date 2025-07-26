@@ -1,10 +1,33 @@
 {
-        "navigationbar": {
-        "logo": "Jan's Portfolio",
-        "home": "Home",
-        "about": "About",
-        "skills": "Skills",
-        "projects": "Projects",
-        "contact": "Contact"
+  "navigationbar": {
+    "logo": "Jan's Portfolio",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "main-heading": "About",
+    "main-heading-span": "Me",
+    "info-heading": "Passionate Web Developer & Tech Creator",
+    "paragraph-1": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
+    "paragraph-2": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
+    "get-in-touch": "Get In Touch",
+    "download-cv": "Download CV",
+    "cards": {
+      "development": {
+        "title": "Web Development",
+        "description": "Creating responsive websites and web applications with modern frameworks."
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Designing intuitive user interfaces and seamless user experiences."
+      },
+      "management": {
+        "title": "Project Management",
+        "description": "Leading projects from conception to completion with agile methodologies."
       }
     }
+  }
+}

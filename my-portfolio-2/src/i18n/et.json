@@ -1,11 +1,33 @@
 {
-        "navigationbar": {
-        "logo": "Jan-i Portfoolio",
-        "home": "Avaleht",
-        "about": "Minust",
-        "skills": "Oskused",
-        "projects": "Projektid",
-        "contact": "Kontakt"
+  "navigationbar": {
+    "logo": "Jani Portfoolio",
+    "home": "Avaleht",
+    "about": "Minust",
+    "skills": "Oskused",
+    "projects": "Projektid",
+    "contact": "Kontakt"
+  },
+  "about": {
+    "main-heading": "Minust",
+    "main-heading-span": "Lähemalt",
+    "info-heading": "Kirglik veebiarendaja ja tehnoloogialooja",
+    "paragraph-1": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
+    "paragraph-2": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
+    "get-in-touch": "Võta ühendust",
+    "download-cv": "Laadi CV alla",
+    "cards": {
+      "development": {
+        "title": "Veebiarendus",
+        "description": "Reageerivate veebisaitide ja veebirakenduste loomine kaasaegsete raamistikuga."
+      },
+      "design": {
+        "title": "UI/UX Disain",
+        "description": "Intuitiivsete kasutajaliideste ja sujuvate kasutajakogemuste kujundamine."
+      },
+      "management": {
+        "title": "Projektijuhtimine",
+        "description": "Projektide juhtimine ideest teostuseni kasutades agiilseid metoodikaid."
       }
-      
     }
+  }
+}

@@ -11,8 +11,6 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-   
-
     { name: t("navigationbar.home"), href: "#hero" },
     { name: t("navigationbar.about"), href: "#about" },
     { name: t("navigationbar.skills"), href: "#skills" },
