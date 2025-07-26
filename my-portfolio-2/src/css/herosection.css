@@ -1,0 +1,111 @@
+@media (max-width: 600px) {
+  .hero-text {
+    font-size: 1.8rem;
+  }
+
+  .hero-text-box p {
+    font-size: 1rem;
+  }
+
+  .hero-text-box a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Hero Section Container */
+#hero {
+  margin-top: 80px;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Hero Text Styling */
+.hero-text {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.hero-text span {
+  display: inline-block;
+  margin-right: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.hero-text span:nth-child(1) { animation-delay: 0.2s; }
+.hero-text span:nth-child(2) { animation-delay: 0.4s; }
+.hero-text span:nth-child(3) { animation-delay: 0.6s; }
+
+/* Paragraph Styling */
+.hero-text-box p {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Call-to-Action Button */
+.hero-text-box a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffff;
+  color: #2c5364;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text-box a:hover {
+  background-color: #ddd;
+}
+
+/* Scroll Indicator */
+#hero > div:last-child {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+#hero > div:last-child svg {
+  animation: bounce 2s infinite;
+  margin-top: 0.5rem;
+}
+

@@ -1,0 +1,102 @@
+#about {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-main-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.about-heading-span {
+  color: #00bcd4;
+}
+
+/* Info Text */
+.about-me-info {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.about-me-info-heading {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.about-me-info-paragraph {
+  font-size: 1rem;
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-me-info-buttons {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
+  color: #0f2027;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.about-me-info-buttons:hover {
+  background-color: #0097a7;
+}
+
+/* Info Cards */
+.about-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-info-container-box {
+  flex: 1 1 250px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.about-info-container-box:hover {
+  transform: translateY(-5px);
+}
+
+.about-info-container-icon-box {
+  margin-bottom: 1rem;
+}
+
+.about-info-container-icon-box svg {
+  width: 40px;
+  height: 40px;
+  color: #00bcd4;
+}
+
+/* Headings inside cards */
+.about-info-container-box h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.about-info-container-box p {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.5;
+}

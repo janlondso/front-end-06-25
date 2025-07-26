@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "SaaS Landing Page 1",
+    "description": "A beautiful landing page app using React and Tailwind.",
+    "image": "/projects/epicapage1.png",
+    "tags": ["React", "TailwindCSS", "Supabase"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 2,
+    "title": "Portfolio Website 2",
+    "description": "Personal portfolio built with React and styled-components.",
+    "image": "/projects/epicapage2.png",
+    "tags": ["React", "Styled-Components"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website 3",
+    "description": "Personal portfolio built with React and styled-components.",
+    "image": "/projects/epicapage2.png",
+    "tags": ["React", "Styled-Components"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  }
+]
