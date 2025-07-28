@@ -1,31 +1,34 @@
 import { ArrowDown } from "lucide-react";
 import "../css/herosection.css";
+import { useTranslation } from "react-i18next";
+import hero from '../assets/hero2.jpeg';
 
 function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="hero">
-      <div>
-        <div className="hero-text-box">
-          <h1 className="hero-text">
-            <span>Hi, I'm</span>
-            <span> Jan</span>
-            <span> Lõndso</span>
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aliquam natus ducimus, quidem inventore quia ut aspernatur.
-            Sunt illum maiores voluptas!
-          </p>
+      <img src={hero}
+        alt="Tech Illustration"
+        className="hero-bg-illustration" />
 
-          <div>
-            <a href="#projects">View My Work</a>
-          </div>
+      <div className="hero-text-box">
+        <h1 className="hero-text">
+          <span>{t("hero.greeting")}</span>
+          <span>{t("hero.firstName")}</span>
+          <span>{t("hero.lastName")}</span>
+        </h1>
+        <p>{t("hero.description")}</p>
+        <div className="hero-buttons">
+          <a href="#projects" className="btn btn-white">{t("hero.viewWork")}</a>
+          <a href="#contact" className="btn btn-blue">{t("hero.contactMe")}</a>
         </div>
+
       </div>
 
-      <div>
-        <span>Scroll</span>
-        <ArrowDown />
+      <div className="scroll-container">
+        {/* <span>{t("hero.scroll")}</span> */}
+        <ArrowDown size={30} />
       </div>
     </section>
   );

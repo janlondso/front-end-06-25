@@ -1,37 +1,20 @@
 import { useEffect, useState } from "react";
-import "../css/skillssection.css"; // Make sure this file exists
-
-// const skills = [
-//   { name: "HTML/CSS", level: 80, category: "frontend" },
-//   { name: "JavaScript", level: 60, category: "frontend" },
-//   { name: "React", level: 70, category: "frontend" },
-//   { name: "TypeScript", level: 45, category: "frontend" },
-//   { name: "Next.js", level: 30, category: "frontend" },
-//   { name: "Node.js", level: 25, category: "backend" },
-//   { name: "Express", level: 30, category: "backend" },
-//   { name: "MongoDB", level: 10, category: "backend" },
-//   { name: "PostgreSQL", level: 10, category: "backend" },
-//   { name: "GraphQL", level: 10, category: "backend" },
-//   { name: "Git/GitHub", level: 60, category: "tools" },
-//   { name: "Docker", level: 10, category: "tools" },
-//   { name: "Figma", level: 80, category: "tools" },
-//   { name: "VS Code", level: 60, category: "tools" },
-// ];
-
+import "../css/skillssection.css";
+import { useTranslation } from "react-i18next";
 
 function SkillsSection() {
+  const { t } = useTranslation();
+
   const [skills, setSkills] = useState([]);
-
-  
-useEffect(() => {
-  fetch("/data/skills.json")
-    .then((res) => res.json())
-    .then((data) => setSkills(data))
-    .catch((err) => console.error("Failed to load skills:", err));
-}, []);
-
   const categories = ["all", "frontend", "backend", "tools"];
   const [activeCategory, setActiveCategory] = useState("all");
+
+  useEffect(() => {
+    fetch("/data/skills.json")
+      .then((res) => res.json())
+      .then((data) => setSkills(data))
+      .catch((err) => console.error("Failed to load skills:", err));
+  }, []);
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
@@ -41,7 +24,7 @@ useEffect(() => {
     <section id="skills" className="skills-section">
       <div className="container">
         <h2>
-          My <span>Skills</span>
+          {t("skills.sectionTitle")} <span>{t("skills.sectionTitleSpan")}</span>
         </h2>
 
         <div className="category-buttons">
@@ -49,29 +32,31 @@ useEffect(() => {
             <button
               key={key}
               onClick={() => setActiveCategory(category)}
-              className={`category-button ${
-                activeCategory === category ? "active" : ""
-              }`}
+              className={`category-button ${activeCategory === category ? "active" : ""}`}
             >
-              {category}
+              {t(`skills.categories.${category}`)}
             </button>
           ))}
         </div>
 
         <div className="skills-list">
           {filteredSkills.map((skill, key) => (
-            <div key={key}
+            <div
+              key={key}
               className="skill-item"
-              style={{ "--delay": `${key * 0.1}s` }}>
+              style={{ "--delay": `${key * 0.1}s` }}
+            >
               <h3>{skill.name}</h3>
               <div className="progress-bar-container">
                 <div
                   className="progress-bar"
-                  style={{ "--skill-level": `${skill.level}%`, width: `${skill.level}%` }}
+                  style={{
+                    "--skill-level": `${skill.level}%`,
+                    width: `${skill.level}%`,
+                  }}
                   data-label={`${skill.level}%`}
                 />
               </div>
-              {/* <span className="skill-level">{skill.level}%</span> */}
             </div>
           ))}
         </div>

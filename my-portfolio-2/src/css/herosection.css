@@ -1,21 +1,16 @@
 @media (max-width: 600px) {
-  .hero-text {
-    font-size: 1.8rem;
-  }
-
-  .hero-text-box p {
-    font-size: 1rem;
-  }
-
-  .hero-text-box a {
+    .hero-text-box a {
     padding: 0.6rem 1.2rem;
     font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .scroll-container {
+    display: none;
   }
 }
 
 /* Hero Section Container */
 #hero {
-  margin-top: 80px;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
@@ -48,18 +43,38 @@
   }
 }
 
+/* Hero bg specs */
+.hero-bg-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1; /* Adjust for subtlety */
+  z-index: 0;
+}
+
+/* Hero Text Box */
+.hero-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero Text Styling */
 .hero-text {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 6rem);
   font-weight: 600;
   line-height: 1.2;
-  max-width: 800px;
-  margin-bottom: 1rem;
 }
 
 .hero-text span {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 12px;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
@@ -71,16 +86,51 @@
 /* Paragraph Styling */
 .hero-text-box p {
   max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1.1rem;
+  margin: 1rem 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.6;
   text-align: left;
 }
 
-/* Call-to-Action Button */
-.hero-text-box a {
-  display: inline-block;
+/* Call-to-Action Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #2c5364;
+}
+
+.btn-white:hover {
+  background-color: #ddd;
+}
+
+.btn-blue {
+  background-color: #2c5364;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  background-color: #1e3a4c;
+}
+
+
+/* .hero-button a {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: #ffffff;
   color: #2c5364;
@@ -88,25 +138,37 @@
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
+
 
 .hero-text-box a:hover {
-  background-color: #ddd;
-}
+  background-color: #ddd; */
+
 
 /* Scroll Indicator */
-#hero > div:last-child {
-  margin-top: 2rem;
+
+.scroll-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 2rem 0 0 0;
+  padding: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 1s;
   opacity: 0;
 }
 
-#hero > div:last-child svg {
+/* .scroll-container span {
+  font-size: 1.1rem;
+  text-align: center;
+} */
+
+.scroll-container svg {
+  margin: 0.5rem auto 0;
   animation: bounce 2s infinite;
-  margin-top: 0.5rem;
+  display: block;
 }
+
 

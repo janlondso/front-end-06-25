@@ -1,5 +1,5 @@
 #projects {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #f0f0f0;
   text-align: center;
@@ -84,15 +84,22 @@
   font-weight: 500;
 }
 
+
+.project-description {
+  padding: 0.5rem;
+}
+
 .projects-card h3 {
   font-size: 1.3rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0 0;
+  padding: 0 1rem 1rem;
+  text-align: left;
 }
 
 .projects-card p {
+  padding: 0 1rem 1rem;
   font-size: 0.95rem;
   color: #d0d0d0;
-  padding: 0 1rem 1rem;
   line-height: 1.5;
   text-align: left;
 }

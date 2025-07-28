@@ -7,18 +7,27 @@
     "projects": "Projektid",
     "contact": "Kontakt"
   },
+   "hero": {
+    "greeting": "Tere, mina olen",
+    "firstName": "Jan",
+    "lastName": "Lõndso",
+    "description": "Olen kirglik front-end veebiarendaja, kes loob kasutajasõbralikke ja visuaalselt köitvaid veebilahendusi kaasaegsete tehnoloogiate abil.",
+    "viewWork": "Vaata minu töid",
+    "contactMe": "Kontakt",
+    "scroll": "Kerige alla"
+  },
   "about": {
     "main-heading": "Minust",
     "main-heading-span": "Lähemalt",
-    "info-heading": "Kirglik veebiarendaja ja tehnoloogialooja",
-    "paragraph-1": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
-    "paragraph-2": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi facere aspernatur cupiditate, maxime est nobis dolorum officia voluptates. Rerum?",
+    "info-heading": "Kirglik Front-End Veebiarendaja",
+    "paragraph-1": "Olen iseseisev õppija, läbinud Codecademy front-end inseneri kursuse ja Aurora Development Front-End programmerija tervikõppe. Lisaks olen õppinud Udemy platvormil mitmeid väiksemaid veebiarenduse kursuseid.",
+    "paragraph-2": "Minu hobideks on veebidisain, reisimine, fotograafia, karate ja kino. Hindan loovust ja olen alati avatud koostööle inspireerivate projektide nimel.",
     "get-in-touch": "Võta ühendust",
     "download-cv": "Laadi CV alla",
     "cards": {
       "development": {
         "title": "Veebiarendus",
-        "description": "Reageerivate veebisaitide ja veebirakenduste loomine kaasaegsete raamistikuga."
+        "description": "Reageerivate veebisaitide ja veebirakenduste loomine kaasaegsete raamistikutega."
       },
       "design": {
         "title": "UI/UX Disain",
@@ -29,5 +38,67 @@
         "description": "Projektide juhtimine ideest teostuseni kasutades agiilseid metoodikaid."
       }
     }
+  },
+  "skills": {
+    "sectionTitle": "Minu",
+    "sectionTitleSpan": "Oskused",
+    "categories": {
+      "all": "Kõik",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tööriistad"
+    }
+  },
+   "projects": {
+    "mainHeading": "Esiletõstetud",
+    "mainHeadingSpan": "Projektid",
+    "mainParagraph": "Siin on mõned minu hiljutised projektid. Iga projekt on hoolikalt loodud, pöörates tähelepanu detailidele, jõudlusele ja kasutajakogemusele.",
+    "checkGithub": "Vaata minu GitHubi"
+  },
+    "projectItems": {
+    "1": {
+      "title": "RockBandi maandumisleht 1",
+      "description": "Kaunis rakendus, kasutades Reacti ja Tailwindi."
+    },
+    "2": {
+      "title": "Portfoolio veebileht 2",
+      "description": "Isiklik portfoolio, loodud Reacti ja styled-components abil."
+    },
+    "3": {
+      "title": "Portfoolio veebileht 3",
+      "description": "Isiklik portfoolio, loodud Reacti ja styled-components abil."
+    }
+  },
+  "contact": {
+  "mainHeading": "Võta julgelt",
+  "mainHeadingSpan": "ühendust",
+  "mainParagraph": "Kas sul on projekt mõttes või soovid koostööd teha? Võta julgelt ühendust. Olen alati avatud uutele võimalustele.",
+  "infoHeading": "Kontaktandmed",
+  "phone": {
+    "label": "Telefon",
+    "value": "+372 55-55-555"
+  },
+  "email": {
+    "label": "E-post",
+    "value": "myemail@gmail.com"
+  },
+  "location": {
+    "label": "Asukoht",
+    "value": "Tallinn, Eesti"
+  },
+  "socialHeading": "Sotsiaalmeedia",
+  "formHeading": "Saada sõnum",
+  "form": {
+    "nameLabel": "Nimi",
+    "namePlaceholder": "Sinu nimi",
+    "emailLabel": "E-post",
+    "emailPlaceholder": "nimi@epost.ee",
+    "messageLabel": "Sõnum",
+    "messagePlaceholder": "Sinu sõnum",
+    "submitButton": "Saada sõnum"
+   }
+ },
+ "footer": {
+  "rights": "Jani Portfoolio. Kõik õigused on kaitstud."
   }
 }

@@ -19,19 +19,15 @@ function AboutSection() {
         <div className="about-me-info">
           <h3 className="about-me-info-heading">{t("about.info-heading")}</h3>
           <p className="about-me-info-paragraph">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi
-            facere aspernatur cupiditate, maxime est nobis dolorum officia
-            voluptates. Rerum?
+            {t("about.paragraph-1")}
           </p>
           <p className="about-me-info-paragraph">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi
-            facere aspernatur cupiditate, maxime est nobis dolorum officia
-            voluptates. Rerum?
+           {t("about.paragraph-2")}
           </p>
 
           <div className="about-me-info-buttons">
-            <a className="about-me-info-buttons" href="#contact">Get In Touch</a>
-            <a className="about-me-info-buttons" href="/files/Jan_CV.pdf" download>Download CV</a>
+            <a className="about-me-info-buttons" href="#contact">{t("about.get-in-touch")}</a>
+            <a className="about-me-info-buttons" href="/files/Jan_CV.pdf" download>{t("about.download-cv")}</a>
           </div>
         </div>
 
@@ -41,10 +37,9 @@ function AboutSection() {
               <Code />
             </div>
             <div className="about-info-container-text">
-              <h4>Web Development</h4>
+              <h4>{t("about.cards.development.title")}</h4>
               <p>
-                Creating responsive websites and web applications with modern
-                frameworks.
+                {t("about.cards.development.description")}
               </p>
             </div>
           </div>
@@ -54,10 +49,9 @@ function AboutSection() {
               <User />
             </div>
             <div className="about-info-container-text">
-              <h4>UI/UX Design</h4>
+              <h4>{t("about.cards.design.title")}</h4>
               <p>
-                Designing intuitive user interfaces and seamless user
-                experiences.
+                {t("about.cards.design.description")}
               </p>
             </div>
           </div>
@@ -67,10 +61,9 @@ function AboutSection() {
                 <Briefcase />
               </div>
               <div className="about-info-container-text">
-                <h4>Project Management</h4>
+                <h4>{t("about.cards.management.title")}</h4>
                 <p>
-                  Leading projects from conception to completion with agile
-                  methodologies.
+                  {t("about.cards.management.description")}
                 </p>
               </div>
           </div>

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-import "../css/projects.css"
+import "../css/projects.css";
+import { useTranslation } from "react-i18next";
+
 
 function ProjectSection() {
+  const { t } = useTranslation();
+  
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -16,11 +20,10 @@ function ProjectSection() {
     <section id="projects">
       <div className="projects-container">
         <h2 className="projects-main-heading">
-          Featured <span className="projects-main-heading-span">Projects</span>
+          {t("projects.mainHeading")} <span className="projects-main-heading-span">{t("projects.mainHeadingSpan")}</span>
         </h2>
         <p className="projects-main-paragraph">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance and user experience.
+          {t("projects.mainParagraph")}
         </p>
 
         <div className="projects-cards">
@@ -38,8 +41,10 @@ function ProjectSection() {
                   <span key={index}>{tag}</span>
                 ))}
               </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <div className="project-description">
+              <h3>{t(project.titleKey)}</h3>
+              <p>{t(project.descriptionKey)}</p>
+              </div>
               <div className="projects-card-links">
                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={20} />
@@ -54,7 +59,7 @@ function ProjectSection() {
 
         <div>
           <a target="_blank" href="#">
-            Check My Github <ArrowRight size={16} />
+            {t("projects.checkGithub")} <ArrowRight size={16} />
           </a>
         </div>
       </div>

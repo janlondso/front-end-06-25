@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "SaaS Landing Page 1",
-    "description": "A beautiful landing page app using React and Tailwind.",
+    "titleKey": "projectItems.1.title",
+    "descriptionKey": "projectItems.1.description",
     "image": "/projects/epicapage1.png",
     "tags": ["React", "TailwindCSS", "Supabase"],
     "demoUrl": "#",
@@ -10,19 +10,19 @@
   },
   {
     "id": 2,
-    "title": "Portfolio Website 2",
-    "description": "Personal portfolio built with React and styled-components.",
+    "titleKey": "projectItems.2.title",
+    "descriptionKey": "projectItems.2.description",
     "image": "/projects/epicapage2.png",
-    "tags": ["React", "Styled-Components"],
+    "tags": ["React", "TailwindCSS"],
     "demoUrl": "#",
     "githubUrl": "#"
   },
   {
     "id": 3,
-    "title": "Portfolio Website 3",
-    "description": "Personal portfolio built with React and styled-components.",
-    "image": "/projects/epicapage2.png",
-    "tags": ["React", "Styled-Components"],
+    "titleKey": "projectItems.3.title",
+    "descriptionKey": "projectItems.3.description",
+    "image": "/projects/epicapage3.png",
+    "tags": ["React", "Bootstrap"],
     "demoUrl": "#",
     "githubUrl": "#"
   }
