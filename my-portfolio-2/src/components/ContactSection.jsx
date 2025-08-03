@@ -13,6 +13,7 @@ function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (!form.current) return;
 
     emailjs

@@ -95,7 +95,8 @@
     "emailPlaceholder": "nimi@epost.ee",
     "messageLabel": "Sõnum",
     "messagePlaceholder": "Sinu sõnum",
-    "submitButton": "Saada sõnum"
+    "submitButton": "Saada sõnum",
+    "error": "Proovi uuesti"
    }
  },
  "footer": {

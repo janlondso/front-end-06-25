@@ -95,7 +95,8 @@
       "emailPlaceholder": "name@email.com",
       "messageLabel": "Message",
       "messagePlaceholder": "Your message",
-      "submitButton": "Send Message"
+      "submitButton": "Send Message",
+      "error": "Error, try again"
     }
   },
   "footer": {
