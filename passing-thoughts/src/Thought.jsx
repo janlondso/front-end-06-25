@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 export function Thought(props) {
   const { thought, removeThought } = props;
-
+  
+// Timer setup in the component
   useEffect(() => {
     const timeUp = setTimeout(() => {
     removeThought(thought.id);
